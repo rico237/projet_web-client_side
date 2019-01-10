@@ -6,17 +6,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div (window:resize)="onResize($event)" class="collapse navbar-collapse" [collapse]="isCollapsed" id="navbarNavDropdown">
+      <div (window:resize)="onResize($event)" class="collapse navbar-collapse" [ngbCollapse]="isCollapsed" id="navbarNavDropdown">
         <ul class="navbar-nav" role="tablist">
           <li class="nav-item">
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
-              <span class="sr-only">{{ "orange-blabla.shared.header.nav-links.sr-only" | translate }}</span>
-              {{ "orange-blabla.shared.header.nav-links.accueil" | translate }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/meeting/create" routerLinkActive="active" class="nav-link" title="Créer les tablées">
-              {{ "orange-blabla.shared.header.nav-links.meeting.create" | translate }}
+              Lien 1
             </a>
           </li>
         </ul>
