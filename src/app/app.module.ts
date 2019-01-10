@@ -1,13 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {ScrollingModule} from '@angular/cdk/scrolling';
-import {CdkTableModule} from '@angular/cdk/table';
-import {CdkTreeModule} from '@angular/cdk/tree';
+import {DragDropModule} from "@angular/cdk/drag-drop";
+import {ScrollingModule} from "@angular/cdk/scrolling";
+import {CdkTableModule} from "@angular/cdk/table";
+import {CdkTreeModule} from "@angular/cdk/tree";
 import {
     MatAutocompleteModule,
     MatBadgeModule,
@@ -44,12 +44,16 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-} from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+} from "@angular/material";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SearchbarComponent } from "./header/searchbar/searchbar.component";
+import { HeaderComponent } from "./header/header.component";
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        SearchbarComponent,
+        HeaderComponent
     ],
     imports: [
         BrowserModule,

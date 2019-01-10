@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "tslint": "tslint --format stylish --project tslint.json --exclude **/node_modules/**/*.ts && echo The code is safe and compliant || echo The code contains errors",
     "e2e": "ng e2e"
   },
   "private": true,

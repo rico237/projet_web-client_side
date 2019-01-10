@@ -1,0 +1,26 @@
+<header role="banner" class="header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+              aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div (window:resize)="onResize($event)" class="collapse navbar-collapse" [collapse]="isCollapsed" id="navbarNavDropdown">
+        <ul class="navbar-nav" role="tablist">
+          <li class="nav-item">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+              <span class="sr-only">{{ "orange-blabla.shared.header.nav-links.sr-only" | translate }}</span>
+              {{ "orange-blabla.shared.header.nav-links.accueil" | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/meeting/create" routerLinkActive="active" class="nav-link" title="Créer les tablées">
+              {{ "orange-blabla.shared.header.nav-links.meeting.create" | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
