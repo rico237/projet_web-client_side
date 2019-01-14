@@ -1,16 +1,18 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{name}}</h5>
-    <p class="card-text">{{intro}}</p>
+<div class="row align-items-start">
+
+  <div class="card ml-auto mr-auto mb-2" style="width: 270px;"*ngFor="let res of searchResult">
+    <div class="card-body">
+      <h5 class="card-title">{{res}}</h5>
+      <p class="card-text">{{intro}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let ing of ingredients">
+        {{ing + ""}}
+      </li>
+
+    </ul>
+    <div class="card-body">
+      <a href="#" class="btn btn-primary" >Details</a>
+    </div>
+
   </div>
-  <ul class="list-group list-group-flush">
-   <!-- <li *ngFor="let ing of ingredients">
-      {{ing + ""}}
-    </li>>
-  -->
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Se lancer !</a>
-    <a href="#" class="card-link">Sauvegarder ou autre</a>
-  </div>
-</div>
