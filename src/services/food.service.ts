@@ -24,8 +24,9 @@ export class FoodService {
         }
 
         return this.http.get("https://projet-web-ihm.herokuapp.com/foods")
-            .pipe(map((response) => {
-                return response.message.filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10);
+            .pipe(map((response: Object) => {
+                const message: string[] = response["message"];
+                return message.filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10);
             }));
     }
 }

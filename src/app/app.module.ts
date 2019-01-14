@@ -54,13 +54,17 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { OptionsComponent } from "./searchbar/options/options.component";
 import { FoodService } from "../services/food.service";
 import { HttpClientModule } from "@angular/common/http";
+import { BodyComponent } from './body/body.component';
+import { RecipeComponent } from './body/recipe/recipe.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         SearchbarComponent,
+        OptionsComponent,
         HeaderComponent,
-        OptionsComponent
+        BodyComponent,
+        RecipeComponent
     ],
     imports: [
         HttpClientModule,
