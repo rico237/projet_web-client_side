@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-body',
-  templateUrl: './body.component.html',
-  styleUrls: ['./body.component.css']
+    selector: "app-body",
+    templateUrl: "./body.component.html",
+    styleUrls: ["./body.component.css"]
 })
 export class BodyComponent implements OnInit {
 
-  constructor() { }
+    @Input() public searchResult: any;
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    public ngOnInit() {
+    }
 
 }

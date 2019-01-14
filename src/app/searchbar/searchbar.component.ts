@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable, of } from "rxjs";
 import {debounceTime, distinctUntilChanged, map} from "rxjs/operators";
 import { faCog, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -45,6 +45,8 @@ export class SearchbarComponent {
 
     public isEmptySearch = false;
 
+    @Output() public searchEvent: EventEmitter<any> = new EventEmitter<any>();
+
     constructor(private foodService: FoodService) {
     }
 
@@ -56,12 +58,9 @@ export class SearchbarComponent {
             switchMap((term) =>
                 this.foodService.searchFood(term).pipe(
                     tap((result) => {
+                        this.searchEvent.emit(result);
                         this.searchFailed = false;
-                        if (result.length === 0) {
-                            this.isEmptySearch = true;
-                        } else {
-                            this.isEmptySearch = false;
-                        }
+                        this.isEmptySearch = result.length === 0;
                     }),
                     catchError(() => {
                         this.searchFailed = true;

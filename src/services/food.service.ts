@@ -23,7 +23,7 @@ export class FoodService {
             return of([]);
         }
 
-        return this.http.get("https://projet-web-ihm.herokuapp.com/foods")
+        return this.http.get("https://projet-web-ihm.herokuapp.com/foodsDev")
             .pipe(map((response: Object) => {
                 const message: string[] = response["message"];
                 return message.filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10);

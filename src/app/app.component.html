@@ -2,8 +2,8 @@
 <app-header></app-header>
 
 <div class="container">
-    <app-searchbar></app-searchbar>
+    <app-searchbar (searchEvent)="retrieveSearchResult($event)"></app-searchbar>
 </div>
 
-<app-body></app-body>
+<app-body *ngIf="searchResult" [searchResult]="searchResult"></app-body>
 <router-outlet></router-outlet>

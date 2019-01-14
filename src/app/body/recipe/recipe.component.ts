@@ -1,39 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-recipe',
-  templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.css']
+    selector: "app-recipe",
+    templateUrl: "./recipe.component.html",
+    styleUrls: ["./recipe.component.css"]
 })
 export class RecipeComponent implements OnInit {
-  name : String;
-  intro : String;
-  ingredients : String [];
+    @Input() public searchResult: string[];
 
-  constructor() { 
+    public name: string;
+    public intro: string;
+    public ingredients: string[];
 
-  }
+    constructor() {
 
-  ngOnInit() {
-    this.getName();
-    this.getIntro();
-    this.getIngredients();
-  }
+    }
 
-  getName(){
-    this.name = "Raclette"
-  }
+    public ngOnInit() {
+        this.getName();
+        this.getIntro();
+        this.getIngredients();
+    }
 
-  getIngredients(){
-    this.ingredients = [];
-    this.ingredients.push("Fromage");
-    this.ingredients.push("Patate");
-    this.ingredients.push("Charcuterie");
-    //console.log(this.ingredients)
-  }
+    public getName() {
+        this.name = "Raclette";
+    }
 
-  getIntro(){
-    this.intro = "Dayum intro"
-  }
+    public getIngredients() {
+        this.ingredients = [];
+        this.ingredients.push("Fromage");
+        this.ingredients.push("Patate");
+        this.ingredients.push("Charcuterie");
+        // console.log(this.ingredients)
+    }
+
+    public getIntro() {
+        this.intro = "Dayum intro";
+    }
 
 }
