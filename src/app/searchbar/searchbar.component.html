@@ -1,0 +1,31 @@
+<form class="mx-2">
+    <label class="sr-only" for="typeahead-basic">Rechercher une recette</label>
+    <div class="input-group mb-2">
+
+        <button type="submit" class="btn btn-secondary" (click)="openPanel()" *ngIf="!isOptionsOpened">
+            <fa-icon [icon]="faCog"></fa-icon> Filtres
+        </button>
+
+        <button type="submit" class="btn btn-secondary" (click)="closePanel()" *ngIf="isOptionsOpened">
+            <fa-icon [icon]="faTimes"></fa-icon> Réduire
+        </button>
+
+        <input id="typeahead-basic" type="text" class="form-control mx-2"
+               [(ngModel)]="typo" name="typo" placeholder="Rechercher un ingrédient ou une recette" [ngbTypeahead]="search"/>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<div *ngIf="isEmptySearch">
+    <div class="alert alert-info" role="alert">
+        Aucune recette n'a pu être trouvée.
+    </div>
+</div>
+
+<app-searchbar-options [isOptionsOpened]="isOptionsOpened"></app-searchbar-options>
+
+<br />
+
+{{ typo }}
+

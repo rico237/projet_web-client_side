@@ -1,20 +1,25 @@
 <header role="banner" class="header">
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-              aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown"
+                    aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div (window:resize)="onResize($event)" class="collapse navbar-collapse" [ngbCollapse]="isCollapsed" id="navbarNavDropdown">
-        <ul class="navbar-nav" role="tablist">
-          <li class="nav-item">
-            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
-              Lien 1
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+            <a class="navbar-brand">Navbar</a>
+
+            <div (window:resize)="onResize($event)" class="collapse navbar-collapse" [ngbCollapse]="isCollapsed"
+                 id="navbarNavDropdown">
+                <ul class="navbar-nav" role="tablist">
+                    <li class="nav-item">
+                        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                           class="nav-link">
+                            Lien 1
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>

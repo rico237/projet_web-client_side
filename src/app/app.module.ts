@@ -47,18 +47,27 @@ import {
     MatTreeModule,
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { SearchbarComponent } from "./header/searchbar/searchbar.component";
+import { SearchbarComponent } from "./searchbar/searchbar.component";
 import { HeaderComponent } from "./header/header.component";
+import { FormsModule } from "@angular/forms";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { OptionsComponent } from "./searchbar/options/options.component";
+import { FoodService } from "../services/food.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     declarations: [
         AppComponent,
         SearchbarComponent,
-        HeaderComponent
+        HeaderComponent,
+        OptionsComponent
     ],
     imports: [
+        HttpClientModule,
         BrowserModule,
-        NgbModule.forRoot(),
+        NgbModule,
+        FontAwesomeModule,
+        FormsModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         CdkTableModule,
@@ -101,7 +110,9 @@ import { HeaderComponent } from "./header/header.component";
         MatTreeModule,
         ScrollingModule,
     ],
-    providers: [],
+    providers: [
+        FoodService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
