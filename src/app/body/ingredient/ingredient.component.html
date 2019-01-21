@@ -7,41 +7,12 @@
       <th scope="col" style="text-align: center;">par portion</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngFor="let item of criteriaNames; let i=index">
       <tr style="text-align: center;">
-        <td>Energie</td>
-        <td>{{energieValue1OO}} kJ</td>
-        <td>{{energieValue}}</td>
+        <td>{{item}}</td>
+        <td>{{values100[i]}}</td>
+        <td>{{valuesPortion[i]}}</td>
       </tr>
-      <tr style="text-align: center;">
-        <td>Lipides</td>
-        <td>{{lipidesValue100}} g</td>
-        <td>{{lipidesValue}} g</td>
-      </tr>
-
-      <tr style="text-align: center;">
-        <td >Glucides</td>
-        <td >{{glucidesValue100}} g</td>
-        <td >{{glucidesValue}} g</td>
-      </tr>
-
-      <tr style="text-align: center;">
-        <td>Fibres</td>
-        <td>{{fibresValue100}} g</td>
-        <td>{{fibresValue}} g</td>
-      </tr>
-
-      <tr style="text-align: center;">
-        <td >Sel</td>
-        <td>{{selValue100}} g</td>
-        <td>{{selValue}} g</td>
-      </tr>
-
-
-
-
   </tbody>
-
-
 
 </table>

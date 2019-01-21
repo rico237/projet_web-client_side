@@ -6,45 +6,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingredient.component.css']
 })
 export class IngredientComponent implements OnInit {
-  public volume : number;
+  public volume: number;
   // valeurs en  calories et g
-  public energieValue : number;
-  public lipidesValue : number;
-  public glucidesValue : number;
-  public fibresValue : number;
-  public selValue : number;
-  // valeurs des apports journaliers
-  public energieValue100 : number;
-  public lipidesValue100 : number;
-  public glucidesValue100 : number;
-  public fibresValue100 : number;
-  public selValue100 : number;
+  public valuesPortion: number[];
+  public values100: number[];
 
-  constructor() { 
+  public criteriaNames : string[];
+
+  constructor() {
+    this.criteriaNames = [];
+    this.values100 = [];
+    this.valuesPortion = [];
   }
 
   ngOnInit() {
     this.volume = 250;
-    this.setCriteriaValues(2109,23,65,1.5,1.84);
+    const mockData = [2109, 23, 65, 1.5, 1.84];
+    const mockDataNames = ["Energie (kJ)","Lipides","Glucides","Fibres","Sel"];
+    this.setCriteriaNames(mockDataNames);
+    this.setCriteriaValues(mockData);
   }
 
-  setCriteriaValues100(){
+
+  setCriteriaValues100() {
     const rapport = this.volume / 100;
-    console.log(rapport)
-    this.energieValue100   = this.energieValue  * rapport;
-    this.lipidesValue100   = this.lipidesValue  * rapport;
-    this.glucidesValue100  = this.glucidesValue * rapport;
-    this.fibresValue100    = this.fibresValue   * rapport;
-    this.selValue100       = this.selValue      * rapport;
+    for(let i = 0 ; i < this.valuesPortion.length; i ++){
+      let temp = (this.valuesPortion [i] * rapport).toFixed(2);
+      this.values100[i] = parseFloat(temp);
+    }
   }
 
-  setCriteriaValues(nrj,lip,glu,fib,sel){
-      this.energieValue = nrj;
-      this.lipidesValue = lip;
-      this.glucidesValue = glu;
-      this.fibresValue = fib;
-      this.selValue = sel;
-      this.setCriteriaValues100();
+  setCriteriaValues(values) {
+    for (let i = 0; i < this.criteriaNames.length; i++) {
+      this.valuesPortion[i] = values [i];
+    }
+    this.setCriteriaValues100();
+  }
+
+  setCriteriaNames(strings){
+    for (let i = 0; i < strings.length; i++){
+      this.criteriaNames[i] = strings[i];
+    }
   }
 
 }
