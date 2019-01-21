@@ -49,13 +49,14 @@ import {
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SearchbarComponent } from "./searchbar/searchbar.component";
 import { HeaderComponent } from "./header/header.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { OptionsComponent } from "./searchbar/options/options.component";
 import { FoodService } from "../services/food.service";
 import { HttpClientModule } from "@angular/common/http";
 import { BodyComponent } from './body/body.component';
 import { RecipeComponent } from './body/recipe/recipe.component';
+import { OptionsService } from '../services/options.service';
 
 @NgModule({
     declarations: [
@@ -72,6 +73,7 @@ import { RecipeComponent } from './body/recipe/recipe.component';
         NgbModule,
         FontAwesomeModule,
         FormsModule,
+        ReactiveFormsModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         CdkTableModule,
@@ -115,7 +117,8 @@ import { RecipeComponent } from './body/recipe/recipe.component';
         ScrollingModule,
     ],
     providers: [
-        FoodService
+        FoodService,
+        OptionsService
     ],
     bootstrap: [AppComponent]
 })

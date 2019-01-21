@@ -1,23 +1,12 @@
-<div class="card mx-2" *ngIf="isOptionsOpened">
-    <div class="card-header">
-        Filtres de recherche
-    </div>
-    <div class="card-body">
-        <button type="button" class="btn mx-1" (click)="updateOption('bio')"
-                [ngClass]="
+<h1>Filtrer</h1>
+
+<div *ngFor="let option of searchOptions">
+    <button type="button" class="btn mx-1" (click)="updateOption(option)"
+            [ngClass]="
                 {
-                    'btn-secondary': options['bio'] === false,
-                    'btn-success': options['bio'] === true
+                    'btn-secondary': !option.isChecked,
+                    'btn-success': option.isChecked
                 }">
-            Bio
-        </button>
-
-        <button type="button" class="btn btn-secondary mx-1">
-            Sans additifs
-        </button>
-
-        <button type="button" class="btn btn-secondary mx-1">
-            Vegan
-        </button>
-    </div>
+        {{ option.name }}
+    </button>
 </div>

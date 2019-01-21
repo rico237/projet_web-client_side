@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { SearchOptions } from "../../../business/search-options";
+import { OptionsService } from "../../../services/options.service";
 
 @Component({
     selector: "app-searchbar-options",
@@ -7,22 +9,26 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class OptionsComponent implements OnInit {
 
-    @Input() public isOptionsOpened: boolean = false;
+    @Output() public optionsEvent: EventEmitter<any> = new EventEmitter<any>();
 
-    public options = {
-        bio: false,
-        vegan: false,
-        withoutAdditifs: false
-    };
+    @Input() public searchOptions: SearchOptions[];
 
-    constructor() {
+    constructor(
+        public optionsService: OptionsService
+    ) {
     }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
+        this.searchOptions = this.optionsService.initOptions();
     }
 
-    public updateOption(toto: string) {
-        this.options[toto] = !this.options[toto];
-        console.log(this.options);
+    public updateOption(searchOption: SearchOptions) {
+        this.searchOptions.forEach((option: SearchOptions) => {
+            if (option === searchOption) {
+                option.isChecked = !searchOption.isChecked;
+            }
+        });
+
+        this.optionsEvent.emit(this.searchOptions);
     }
 }
