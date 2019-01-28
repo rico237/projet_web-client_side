@@ -55,7 +55,7 @@ import { OptionsComponent } from "./searchbar/options/options.component";
 import { FoodService } from "../services/food.service";
 import { HttpClientModule } from "@angular/common/http";
 import { BodyComponent } from './body/body.component';
-import { RecipeComponent } from './body/recipe/recipe.component';
+import { RecipePreviewComponent } from './body/recipePreview/recipePreview.component';
 import { OptionsService } from '../services/options.service';
 import { IngredientComponent } from './body/ingredient/ingredient.component';
 import { DetailsComponent } from './body/details/details.component';
@@ -67,7 +67,7 @@ import { DetailsComponent } from './body/details/details.component';
         OptionsComponent,
         HeaderComponent,
         BodyComponent,
-        RecipeComponent,
+        RecipePreviewComponent,
         IngredientComponent,
         DetailsComponent
     ],

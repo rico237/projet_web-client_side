@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-    selector: "app-recipe",
-    templateUrl: "./recipe.component.html",
-    styleUrls: ["./recipe.component.css"]
+    selector: "app-recipePreview",
+    templateUrl: "./recipePreview.component.html",
+    styleUrls: ["./recipePreview.component.css"]
 })
-export class RecipeComponent implements OnInit {
+export class RecipePreviewComponent implements OnInit {
     @Input() public searchResult: string[];
 
     public name: string;
