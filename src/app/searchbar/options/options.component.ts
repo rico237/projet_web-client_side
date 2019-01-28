@@ -19,7 +19,6 @@ export class OptionsComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.searchOptions = this.optionsService.initOptions();
     }
 
     public updateOption(searchOption: SearchOptions) {

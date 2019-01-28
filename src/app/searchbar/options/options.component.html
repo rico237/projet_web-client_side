@@ -1,12 +1,11 @@
 <h1>Filtrer</h1>
 
-<div *ngFor="let option of searchOptions">
-    <button type="button" class="btn mx-1" (click)="updateOption(option)"
-            [ngClass]="
+<button *ngFor="let option of searchOptions" type="button" class="btn mx-1 my-1" (click)="updateOption(option)"
+        [ngClass]="
                 {
                     'btn-secondary': !option.isChecked,
                     'btn-success': option.isChecked
                 }">
-        {{ option.name }}
-    </button>
-</div>
+    {{ option.name }}
+</button>
+
