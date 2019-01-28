@@ -57,6 +57,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { BodyComponent } from './body/body.component';
 import { RecipeComponent } from './body/recipe/recipe.component';
 import { OptionsService } from '../services/options.service';
+import { IngredientComponent } from './body/ingredient/ingredient.component';
+import { DetailsComponent } from './body/details/details.component';
 
 @NgModule({
     declarations: [
@@ -65,7 +67,9 @@ import { OptionsService } from '../services/options.service';
         OptionsComponent,
         HeaderComponent,
         BodyComponent,
-        RecipeComponent
+        RecipeComponent,
+        IngredientComponent,
+        DetailsComponent
     ],
     imports: [
         HttpClientModule,
