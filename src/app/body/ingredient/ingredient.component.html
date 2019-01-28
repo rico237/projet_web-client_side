@@ -1,18 +1,32 @@
-<table class="table table-sm table-hover" id="tableProduit">
-  <!-- un tableau identique a ce qu'on peut retrou ver sur les produits actuels -->
-  <thead class="thead-light">
-    <tr>
-      <th scope="col" style="text-align: center;">Informations nutritionnelles</th>
-      <th scope="col" style="text-align: center;">pour 100 g / 100 ml</th>
-      <th scope="col" style="text-align: center;">par portion</th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let item of criteriaNames; let i=index">
-      <tr style="text-align: center;">
-        <td>{{item}}</td>
-        <td>{{values100[i]}}</td>
-        <td>{{valuesPortion[i]}}</td>
-      </tr>
-  </tbody>
+<div class="media">
+  <img src="" class="mr-3" alt="could not load image">
+  <div class="media-body">
+    <!-- le nom de l'ingredient -->
+    <h1 class="mt-0">{{name}}</h1>
+    <!-- un tableau identique a ce qu'on peut retrou ver sur les produits actuels -->
+    <table class="table table-sm table-hover" id="tableProduit">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" style="text-align: center;">Informations nutritionnelles</th>
+          <th scope="col" style="text-align: center;">pour 100 g / 100 ml</th>
+          <th scope="col" style="text-align: center;">par portion</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of criteriaNames; let i=index">
+        <tr style="text-align: center;">
+          <td>{{item}}</td>
+          <td>{{values100[i]}}</td>
+          <td>{{valuesPortion[i]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-</table>
+<!--
+<ul class="list-unstyled">
+  <li class="media">
+
+  </li>
+</ul>
+-->

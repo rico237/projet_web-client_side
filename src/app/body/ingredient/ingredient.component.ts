@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingredient.component.css']
 })
 export class IngredientComponent implements OnInit {
+  public name : string;
   public volume: number;
   // valeurs en  calories et g
   public valuesPortion: number[];
@@ -23,6 +24,7 @@ export class IngredientComponent implements OnInit {
     this.volume = 250;
     const mockData = [2109, 23, 65, 1.5, 1.84];
     const mockDataNames = ["Energie (kJ)","Lipides","Glucides","Fibres","Sel"];
+    this.name = "zeub";
     this.setCriteriaNames(mockDataNames);
     this.setCriteriaValues(mockData);
   }
