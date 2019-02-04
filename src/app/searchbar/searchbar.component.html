@@ -2,8 +2,8 @@
     <label class="sr-only" for="typeahead-basic">Rechercher une recette</label>
     <div class="input-group mb-2">
 
-        <button type="submit" class="btn btn-secondary" (click)="sidenav.toggle()">
-            <fa-icon [icon]="faCog"></fa-icon> Filtrer les résultats
+        <button type="submit" class="btn btn-secondary" (click)="isOpenedMenu = !isOpenedMenu">
+            <fa-icon [icon]="faCog"></fa-icon> Filtres
         </button>
 
         <input id="typeahead-basic" type="text" class="form-control mx-2"
@@ -11,6 +11,8 @@
 
         <button type="submit" class="btn btn-primary" (click)="submit();">Submit</button>
     </div>
+
+    <app-searchbar-options *ngIf="isOpenedMenu" [searchOptions]="searchOptions" (optionsEvent)="retrieveOptions($event)"></app-searchbar-options>
 </form>
 
 <div *ngIf="isEmptySearch">

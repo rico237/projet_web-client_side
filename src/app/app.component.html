@@ -1,4 +1,4 @@
-/*<mat-sidenav-container class="example-container">
+<!--<mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="over" [(opened)]="opened" position="end">
         <button  type="submit" class="btn" (click)="sidenav.toggle()" style="float:right;">
             <fa-icon [icon]="faTimes"></fa-icon>
@@ -13,12 +13,18 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <app-header></app-header>
+
 
         <div class="container">
-            <app-body *ngIf="searchResult" [searchResult]="searchResult"></app-body>
+            <app-body [sidenav]="sidenav" *ngIf="searchResult" [searchResult]="searchResult"></app-body>
 
-            <router-outlet></router-outlet>
-        </div>
+
+
     </mat-sidenav-content>
 </mat-sidenav-container>
+-->
+
+<app-header></app-header>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
