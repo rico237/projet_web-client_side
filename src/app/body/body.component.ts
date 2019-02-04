@@ -7,17 +7,9 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class BodyComponent implements OnInit {
 
-    @Input() public searchResult: any;
-
     constructor() {
     }
 
     public ngOnInit() {
     }
-
-
-    public retrieveSearchResult(event: any) {
-        this.searchResult = event;
-    }
-
 }

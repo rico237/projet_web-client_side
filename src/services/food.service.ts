@@ -16,15 +16,22 @@ export class FoodService {
     /**
      * Recherche de la nourriture
      * @param {string} term
+     * @param options
      * @returns {Observable<any>}
      */
-    public searchFood(term: string): Observable<any> {
+    public searchFood(term: string, options: string[]): Observable<any> {
         if (term === "") {
             return of([]);
         }
 
-        return this.http.get("https://projet-web-ihm.herokuapp.com/products/test")
+        const data = {
+            productName: term,
+            tabs: options
+        };
+
+        return this.http.post("https://projet-web-ihm.herokuapp.com/products/find_allergens/ingredients", data)
             .pipe(map((response: Object) => {
+                console.log(response);
                 const message: string[] = response["testProducts"];
                 return message.filter((v) => {
                     return v.toLowerCase().indexOf(term.toLowerCase()) > -1;
@@ -32,7 +39,7 @@ export class FoodService {
             }));
     }
 
-    public getIngredientsFromFilters() {
+    public searchFoodWithFilters(term: string, filters: string[]) {
         // return this.http.post();
     }
 }
