@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from "@angular/core";
 @Component({
     selector: "app-recipePreview",
     templateUrl: "./recipePreview.component.html",
-    styleUrls: ["./recipePreview.component.css"]
+    styleUrls: ["./recipePreview.component.scss"]
 })
 export class RecipePreviewComponent implements OnInit {
     @Input() public searchResult: string[];
