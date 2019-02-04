@@ -7,6 +7,7 @@ import { catchError, switchMap, tap } from "rxjs/internal/operators";
 import { SearchOptions } from '../../business/search-options';
 import * as _ from 'lodash';
 import { OptionsService } from '../../services/options.service';
+import { FoodStoreService } from '../../services/storage/food.store.service';
 
 @Component({
     selector: "app-searchbar",
@@ -33,8 +34,11 @@ export class SearchbarComponent implements OnInit {
 
     public searchOptions: SearchOptions[] = [];
 
-
-    constructor(private foodService: FoodService, public optionsService: OptionsService) {
+    constructor(
+        private foodService: FoodService,
+        public optionsService: OptionsService,
+        private foodStoreService: FoodStoreService
+    ) {
     }
 
     public ngOnInit() {
@@ -76,7 +80,7 @@ export class SearchbarComponent implements OnInit {
             switchMap((term) =>
                 this.foodService.searchFood(term, this.retrieveComputedOptions()).pipe(
                     tap((result) => {
-                        this.searchEvent.emit(result);
+                        this.searchEvent.emit(this.foodStoreService.getFood());
                         this.searchFailed = false;
                         this.isEmptySearch = result.length === 0;
                     }),

@@ -14,7 +14,6 @@ export class OptionsComponent implements OnInit {
     @Input() public searchOptions: SearchOptions[];
 
     constructor(
-        private optionsService: OptionsService
     ) {
     }
 

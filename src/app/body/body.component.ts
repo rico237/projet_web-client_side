@@ -7,9 +7,15 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class BodyComponent implements OnInit {
 
+    public ingredientsResult;
+
     constructor() {
     }
 
     public ngOnInit() {
+    }
+
+    public retrieveIngredientsResult(event): void {
+        this.ingredientsResult = event;
     }
 }

@@ -60,6 +60,7 @@ import { OptionsService } from "../services/options.service";
 import { IngredientComponent } from "./body/ingredient/ingredient.component";
 import { DetailsComponent } from "./body/details/details.component";
 import { AddProductComponent } from './add-product/add-product.component';
+import { FoodStoreService } from '../services/storage/food.store.service';
 
 @NgModule({
     declarations: [
@@ -124,7 +125,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     ],
     providers: [
         FoodService,
-        OptionsService
+        OptionsService,
+        FoodStoreService
     ],
     bootstrap: [AppComponent]
 })
