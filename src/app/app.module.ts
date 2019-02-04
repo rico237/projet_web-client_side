@@ -5,10 +5,10 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
-import {DragDropModule} from "@angular/cdk/drag-drop";
-import {ScrollingModule} from "@angular/cdk/scrolling";
-import {CdkTableModule} from "@angular/cdk/table";
-import {CdkTreeModule} from "@angular/cdk/tree";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ScrollingModule } from "@angular/cdk/scrolling";
+import { CdkTableModule } from "@angular/cdk/table";
+import { CdkTreeModule } from "@angular/cdk/tree";
 import {
     MatAutocompleteModule,
     MatBadgeModule,
@@ -49,17 +49,16 @@ import {
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SearchbarComponent } from "./searchbar/searchbar.component";
 import { HeaderComponent } from "./header/header.component";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { OptionsComponent } from "./searchbar/options/options.component";
 import { FoodService } from "../services/food.service";
 import { HttpClientModule } from "@angular/common/http";
-import { BodyComponent } from './body/body.component';
-import { RecipePreviewComponent } from './body/recipePreview/recipePreview.component';
-import { OptionsService } from '../services/options.service';
-import { IngredientComponent } from './body/ingredient/ingredient.component';
-import { DetailsComponent } from './body/details/details.component';
-import { CreateReceipeComponent } from './create-receipe/create-receipe.component';
+import { BodyComponent } from "./body/body.component";
+import { RecipePreviewComponent } from "./body/recipePreview/recipePreview.component";
+import { OptionsService } from "../services/options.service";
+import { IngredientComponent } from "./body/ingredient/ingredient.component";
+import { DetailsComponent } from "./body/details/details.component";
 
 @NgModule({
     declarations: [
@@ -71,7 +70,6 @@ import { CreateReceipeComponent } from './create-receipe/create-receipe.componen
         RecipePreviewComponent,
         IngredientComponent,
         DetailsComponent,
-        CreateReceipeComponent
     ],
     imports: [
         HttpClientModule,
