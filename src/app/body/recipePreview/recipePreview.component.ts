@@ -11,7 +11,7 @@ export class RecipePreviewComponent implements OnInit {
     public name: string;
     public intro: string;
     public ingredients: string[];
-    public imgSrc : boolean;
+    public imgSrc: boolean;
 
     constructor() {
 

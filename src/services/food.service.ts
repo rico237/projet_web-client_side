@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { map } from "rxjs/internal/operators";
+import { FoodStoreService } from './storage/food.store.service';
 
 @Injectable()
 export class FoodService {
@@ -9,8 +10,9 @@ export class FoodService {
     /**
      * FoodService constructeur
      * @param {HttpClient} http
+     * @param foodStoreService
      */
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private foodStoreService: FoodStoreService) {
     }
 
     /**
@@ -31,9 +33,16 @@ export class FoodService {
 
         return this.http.post("https://projet-web-ihm.herokuapp.com/products/find_allergens/ingredients", data)
             .pipe(map((response: Object) => {
-                console.log(response);
-                const message: string[] = response["testProducts"];
-                return message.filter((v) => {
+                const products = response["products"];
+                this.foodStoreService.setFood(products);
+
+                let ingredients = [];
+
+                products.forEach((product) => {
+                    ingredients.push(product.product_name);
+                });
+
+                return ingredients.filter((v) => {
                     return v.toLowerCase().indexOf(term.toLowerCase()) > -1;
                 }).slice(0, 10);
             }));
