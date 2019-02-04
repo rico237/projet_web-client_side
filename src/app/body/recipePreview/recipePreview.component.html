@@ -3,7 +3,15 @@
         <img src={{imgSrc}} class="card-img-top" alt="ingredient image">
         <div class="card-body p-1">
             <h4 class="card-title  p-1">{{res.product_name}}</h4>
-            <a routerLink="/detail/{{res}}" class="btn btn-primary">Details</a>
+            <button class='btn btn-block myButt over' routerLink="/detail/{{res}}">
+                <div class='layer'>Details</div>
+                Prix
+            </button>
         </div>
     </div>
 </div>
+
+
+
+<!--             <button routerLink="/detail/{{res}}" class="btn btn-three">Details</button>
+ -->

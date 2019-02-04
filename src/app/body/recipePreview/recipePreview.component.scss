@@ -1,0 +1,41 @@
+$color:rgb(134, 31, 74);
+@mixin transition($in) {
+    transition: $in;
+    -webkit-transition: $in;
+    -moz-transition: $in;
+    -o-transition: $in;
+    -ms-transition: $in;
+}
+
+.myButt {
+    outline: none;
+    color: white;
+    border: 1px;
+    padding: 20px;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    @include transition(all 0.5s ease);
+}
+
+.over {
+    overflow: hidden;
+    background-color: rgb(240, 81, 8);
+    .layer {
+        position: absolute;
+        color: white;
+        top: -70px;
+        width: 100%;
+        left: 0;
+        padding: 20px 0;
+        background-color: $color;
+        @include transition(all 0.3s ease);
+    }
+    &:hover {
+        .layer {
+            top: 0;
+        }
+    }
+}
