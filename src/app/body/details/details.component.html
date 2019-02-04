@@ -1,9 +1,5 @@
-<h3>Composition</h3>
-<h3>Valeurs nutritionnelles pour 100g</h3>
-<h3>Allergènes </h3>
-<ul class="list-unstyled" >
-  <li class="media fullWidth">
-      <app-ingredient class="fullWidth"></app-ingredient>
-  </li>
-</ul>
-
+<h2>Composition</h2>
+<p *ngFor="let element of ingredients">{{element.name}}</p>
+<h2>Valeurs nutritionnelles pour 100g</h2>
+<app-ingredient class="fullWidth"></app-ingredient>
+<h2>Allergènes </h2>

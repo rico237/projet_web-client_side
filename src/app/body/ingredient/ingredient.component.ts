@@ -18,6 +18,7 @@ export class IngredientComponent implements OnInit {
     this.criteriaNames = [];
     this.values100 = [];
     this.valuesPortion = [];
+    this.setName();
   }
 
   ngOnInit() {
@@ -49,6 +50,10 @@ export class IngredientComponent implements OnInit {
     for (let i = 0; i < strings.length; i++){
       this.criteriaNames[i] = strings[i];
     }
+  }
+
+  setName(){
+    this.name = "zeub"
   }
 
 }
