@@ -11,6 +11,7 @@ export class RecipePreviewComponent implements OnInit {
     public name: string;
     public intro: string;
     public ingredients: string[];
+    public imgSrc : boolean;
 
     constructor() {
 
@@ -18,8 +19,9 @@ export class RecipePreviewComponent implements OnInit {
 
     public ngOnInit() {
         this.getName();
-        this.getIntro();
         this.getIngredients();
+        this.getIntro();
+        this.getImg("");
     }
 
     public getName() {
@@ -35,7 +37,13 @@ export class RecipePreviewComponent implements OnInit {
     }
 
     public getIntro() {
-        this.intro = "Dayum intro";
+        this.intro = "";
+        for (let ing of this.ingredients) {
+            this.intro += " " + ing
+        }
     }
 
+    public getImg(src){
+        this.imgSrc = src ? src : './../../../assets/img/notFound.png';
+    }
 }
