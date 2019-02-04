@@ -14,7 +14,7 @@ export class OptionsComponent implements OnInit {
     @Input() public searchOptions: SearchOptions[];
 
     constructor(
-        public optionsService: OptionsService
+        private optionsService: OptionsService
     ) {
     }
 
@@ -22,6 +22,7 @@ export class OptionsComponent implements OnInit {
     }
 
     public updateOption(searchOption: SearchOptions) {
+
         this.searchOptions.forEach((option: SearchOptions) => {
             if (option === searchOption) {
                 option.isChecked = !searchOption.isChecked;

@@ -20,7 +20,7 @@ mat-sidenav {
 
 @media (min-width: 320px) {
     mat-sidenav {
-        width: 320px;
+        width: 350px;
     }
 }
 
@@ -28,4 +28,12 @@ mat-sidenav {
     mat-sidenav {
         width: 400px;
     }
+}
+
+.sidenavFooter {
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+    padding: 10px;
+    background-color: #fff;
 }

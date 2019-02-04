@@ -11,18 +11,6 @@ export class OptionsService {
 
     }
 
-    public initOptions(): SearchOptions[] {
-        let searchOptions: SearchOptions[] = [];
-
-        /*options.forEach((option) => {
-            const searchOption = new SearchOptions();
-            searchOption.name = option;
-            searchOptions.push(searchOption);
-        });*/
-
-        return searchOptions;
-    }
-
     public getOptions(): Observable<any> {
         return this.http.get("https://projet-web-ihm.herokuapp.com/products/allergens/all");
     }

@@ -40,11 +40,13 @@ export class SearchbarComponent {
             switchMap((term) =>
                 this.foodService.searchFood(term).pipe(
                     tap((result) => {
+                        console.log("hello");
                         this.searchEvent.emit(result);
                         this.searchFailed = false;
                         this.isEmptySearch = result.length === 0;
                     }),
-                    catchError(() => {
+                    catchError((error) => {
+                        console.log(error);
                         this.searchFailed = true;
                         return of([]);
                     }))
@@ -53,6 +55,5 @@ export class SearchbarComponent {
         )
 
     public submit(): void {
-        console.log(this.options);
     }
 }

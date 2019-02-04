@@ -1,9 +1,15 @@
-<mat-sidenav-container class="example-container">
+/*<mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="over" [(opened)]="opened" position="end">
         <button  type="submit" class="btn" (click)="sidenav.toggle()" style="float:right;">
             <fa-icon [icon]="faTimes"></fa-icon>
         </button>
-        <app-searchbar-options (optionsEvent)="retrieveOptions($event)" [searchOptions]="searchOptions"></app-searchbar-options>
+        <div style="">
+            <app-searchbar-options (optionsEvent)="retrieveOptions($event)" [searchOptions]="searchOptions"></app-searchbar-options>
+        </div>
+
+        <div class="sidenavFooter">
+            <button class="btn btn-success" (click)="sidenav.toggle()">Valider les filres</button>
+        </div>
     </mat-sidenav>
 
     <mat-sidenav-content>
@@ -15,6 +21,11 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+<div class="container">
+    <app-searchbar [sidenav]="sidenav" (searchEvent)="retrieveSearchResult($event)" [options]="searchOptions"></app-searchbar>
+    <app-body *ngIf="searchResult" [searchResult]="searchResult"></app-body>
+</div>
 
 <router-outlet></router-outlet>
 

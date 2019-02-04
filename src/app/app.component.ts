@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.searchOptions = this.optionsService.initOptions();
         this.optionsService.getOptions().subscribe((option) => {
             const tmpAllergens = option.allergens;
             let allArray = [];
@@ -55,8 +54,6 @@ export class AppComponent implements OnInit {
                 searchOption.isChecked = false;
                 finalArray.push(searchOption);
             });
-
-            console.log(finalArray);
 
             this.searchOptions = finalArray;
         });
