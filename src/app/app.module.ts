@@ -59,6 +59,7 @@ import { RecipePreviewComponent } from './body/recipePreview/recipePreview.compo
 import { OptionsService } from '../services/options.service';
 import { IngredientComponent } from './body/ingredient/ingredient.component';
 import { DetailsComponent } from './body/details/details.component';
+import { CreateReceipeComponent } from './create-receipe/create-receipe.component';
 
 @NgModule({
     declarations: [
@@ -69,7 +70,8 @@ import { DetailsComponent } from './body/details/details.component';
         BodyComponent,
         RecipePreviewComponent,
         IngredientComponent,
-        DetailsComponent
+        DetailsComponent,
+        CreateReceipeComponent
     ],
     imports: [
         HttpClientModule,

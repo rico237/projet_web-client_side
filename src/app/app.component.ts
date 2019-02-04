@@ -59,10 +59,6 @@ export class AppComponent implements OnInit {
         });
     }
 
-    public retrieveSearchResult(event: any) {
-        this.searchResult = event;
-    }
-
     public retrieveOptions(event: any) {
         this.searchOptions = event;
     }

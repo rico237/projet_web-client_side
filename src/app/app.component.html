@@ -16,16 +16,9 @@
         <app-header></app-header>
 
         <div class="container">
-            <app-searchbar [sidenav]="sidenav" (searchEvent)="retrieveSearchResult($event)" [options]="searchOptions"></app-searchbar>
             <app-body *ngIf="searchResult" [searchResult]="searchResult"></app-body>
+
+            <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
-<div class="container">
-    <app-searchbar [sidenav]="sidenav" (searchEvent)="retrieveSearchResult($event)" [options]="searchOptions"></app-searchbar>
-    <app-body *ngIf="searchResult" [searchResult]="searchResult"></app-body>
-</div>
-
-<router-outlet></router-outlet>
-

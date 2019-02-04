@@ -15,4 +15,9 @@ export class BodyComponent implements OnInit {
     public ngOnInit() {
     }
 
+
+    public retrieveSearchResult(event: any) {
+        this.searchResult = event;
+    }
+
 }
