@@ -67,6 +67,8 @@ import { RecetteDetailComponent } from './recette/recette-detail/recette-detail.
 import { FoodDetailStoreService } from '../services/storage/food-detail.store.service';
 import { IsAccessAllowedGuard } from '../guard/is-access-allowed.guard';
 import { LocalStoreService } from '../services/storage/local-store.service';
+import { MapsComponent } from './body/ingredient/maps/maps.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
     declarations: [
@@ -82,6 +84,7 @@ import { LocalStoreService } from '../services/storage/local-store.service';
         RecetteComponent,
         RecetteCommentsComponent,
         RecetteDetailComponent,
+        MapsComponent,
     ],
     imports: [
         HttpClientModule,
@@ -131,6 +134,9 @@ import { LocalStoreService } from '../services/storage/local-store.service';
         MatTooltipModule,
         MatTreeModule,
         ScrollingModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyCv8Bpz2wUBHrl8ed75wyggnTVrregKx14'
+          })
     ],
     providers: [
         FoodService,
