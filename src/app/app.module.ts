@@ -64,6 +64,9 @@ import { FoodStoreService } from '../services/storage/food.store.service';
 import { RecetteComponent } from './recette/recette.component';
 import { RecetteCommentsComponent } from './recette/recette-comments/recette-comments.component';
 import { RecetteDetailComponent } from './recette/recette-detail/recette-detail.component';
+import { FoodDetailStoreService } from '../services/storage/food-detail.store.service';
+import { IsAccessAllowedGuard } from '../guard/is-access-allowed.guard';
+import { LocalStoreService } from '../services/storage/local-store.service';
 
 @NgModule({
     declarations: [
@@ -132,7 +135,10 @@ import { RecetteDetailComponent } from './recette/recette-detail/recette-detail.
     providers: [
         FoodService,
         OptionsService,
-        FoodStoreService
+        FoodStoreService,
+        FoodDetailStoreService,
+        IsAccessAllowedGuard,
+        LocalStoreService
     ],
     bootstrap: [AppComponent]
 })

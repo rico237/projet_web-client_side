@@ -1,9 +1,9 @@
 <div class="row align-items-stretch flex-fill">
-    <div class="card text-center ml-auto mr-auto mb-2 p-1 h-100" style="width: 12rem;" *ngFor="let res of searchResult">
+    <div class="card text-center ml-auto mr-auto mb-2 p-1 h-100" style="width: 12rem;" *ngFor="let result of searchResult">
         <img src={{imgSrc}} class="card-img-top" alt="ingredient image">
         <div class="card-body p-1">
-            <h4 class="card-title  p-1">{{res.product_name}}</h4>
-            <button class='btn btn-block myButt over' routerLink="/detail/{{res}}">
+            <h4 class="card-title  p-1">{{result.product_name}}</h4>
+            <button class='btn btn-block myButt over' (click)="routeDetailProduct('/detail/', result);">
                 <div class='layer'>Details</div>
                 Prix
             </button>
