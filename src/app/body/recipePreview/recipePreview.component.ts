@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { FoodDetailStoreService } from "../../../services/storage/food-detail.store.service";
+import { LocalStoreService } from '../../../services/storage/local-store.service';
 
 @Component({
     selector: "app-recipePreview",
@@ -13,7 +16,10 @@ export class RecipePreviewComponent implements OnInit {
     public ingredients: string[];
     public imgSrc: boolean;
 
-    constructor() {
+    constructor(
+        private router: Router,
+        private foodDetailStoreservice: FoodDetailStoreService,
+        private localStoreService: LocalStoreService) {
 
     }
 
@@ -22,6 +28,8 @@ export class RecipePreviewComponent implements OnInit {
         this.getIngredients();
         this.getIntro();
         this.getImg("");
+
+        this.localStoreService.setRoute("/home");
     }
 
     public getName() {
@@ -39,11 +47,16 @@ export class RecipePreviewComponent implements OnInit {
     public getIntro() {
         this.intro = "";
         for (let ing of this.ingredients) {
-            this.intro += " " + ing
+            this.intro += " " + ing;
         }
     }
 
-    public getImg(src){
-        this.imgSrc = src ? src : './../../../assets/img/notFound.png';
+    public getImg(src) {
+        this.imgSrc = src ? src : "./../../../assets/img/notFound.png";
+    }
+
+    public routeDetailProduct(detailRoute, productInfos) {
+        this.foodDetailStoreservice.setFoodInfos(productInfos);
+        this.router.navigate([detailRoute + productInfos._id]);
     }
 }
