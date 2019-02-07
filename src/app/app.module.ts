@@ -61,6 +61,9 @@ import { IngredientComponent } from "./body/ingredient/ingredient.component";
 import { DetailsComponent } from "./body/details/details.component";
 import { AddProductComponent } from './add-product/add-product.component';
 import { FoodStoreService } from '../services/storage/food.store.service';
+import { RecetteComponent } from './recette/recette.component';
+import { RecetteCommentsComponent } from './recette/recette-comments/recette-comments.component';
+import { RecetteDetailComponent } from './recette/recette-detail/recette-detail.component';
 
 @NgModule({
     declarations: [
@@ -73,6 +76,9 @@ import { FoodStoreService } from '../services/storage/food.store.service';
         IngredientComponent,
         DetailsComponent,
         AddProductComponent,
+        RecetteComponent,
+        RecetteCommentsComponent,
+        RecetteDetailComponent,
     ],
     imports: [
         HttpClientModule,
