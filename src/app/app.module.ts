@@ -67,7 +67,7 @@ import { RecetteDetailComponent } from './recette/recette-detail/recette-detail.
 import { FoodDetailStoreService } from '../services/storage/food-detail.store.service';
 import { IsAccessAllowedGuard } from '../guard/is-access-allowed.guard';
 import { LocalStoreService } from '../services/storage/local-store.service';
-import { MapsComponent } from './body/ingredient/maps/maps.component';
+import { MapsComponent } from './body/details/maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
