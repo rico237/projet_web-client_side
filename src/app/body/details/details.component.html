@@ -35,7 +35,7 @@
                 </div>
                 <hr />
                 <pre>Model: {{ model | json }}</pre>
-                <button type="submit" class="btn btn-outline-success">Soumettre</button>
+                <button type="submit" class="btn btn-block btn-outline-success">Soumettre</button>
             </form>
 
         </div>
@@ -44,7 +44,7 @@
             <button class="btn btn-primary btn-block">zeuby</button>
         </div>
 
-        <div class="col">
+        <div class="col" *ngIf="price > 0">
             <app-maps></app-maps>
         </div>
     </div>
