@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="card card-body colorized fadeInDown">
+        <form>
+            <div class="form-group">
+                <label for="inputPrix">Prix</label>
+                <small class="form-text text-muted">Entrez le prix où vous avez acheté
+                    cet article</small>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">€</span>
+                    </div>
+                    <input id=inputPrix type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+                        placeholder="Entrez le prix">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputLieu">Lieu</label>
+                <small class="form-text text-muted">Entrez le lieu où vous avez acheté
+                    cet article</small>
+                <input class="form-control" id="inputLieu" placeholder="Lieu d'achat">
+            </div>
+            <!--
+                            <div class="form-group">
+                            <label for="inputLieu">Date d'achat</label>
+                                <div class="input-group">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary calendar" (click)="d.toggle()" type="button">choisir la date</button>
+                                    </div>
+                                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model"
+                                        ngbDatepicker #d="ngbDatepicker">
+                                </div>
+                            </div>
+                        <hr />
+                        <pre>Model: {{ model | json }}</pre>
+                      -->
+            <button type="submit" class="btn btn-block btn-success">Soumettre</button>
+
+        </form>
+    </div>
+</div>
