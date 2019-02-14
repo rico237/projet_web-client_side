@@ -69,6 +69,7 @@ import { IsAccessAllowedGuard } from '../guard/is-access-allowed.guard';
 import { LocalStoreService } from '../services/storage/local-store.service';
 import { MapsComponent } from './body/details/maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
+import { PrixComponent } from './body/details/prix/prix.component';
 
 @NgModule({
     declarations: [
@@ -85,6 +86,7 @@ import { AgmCoreModule } from '@agm/core';
         RecetteCommentsComponent,
         RecetteDetailComponent,
         MapsComponent,
+        PrixComponent,
     ],
     imports: [
         HttpClientModule,
