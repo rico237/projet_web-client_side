@@ -9,27 +9,37 @@ import { FoodDetailStoreService } from '../../../services/storage/food-detail.st
 })
 export class DetailsComponent implements OnInit {
     public recipeName: string;
-    public ingredients: tableauNutrition[] = [];
+    public tableauNutrition: tableauNutrition;
+    public composants: string [] = [];
+    public allergenes: string[] = [];
     public price: number = 1;
-    public disponibilites: object [] = [];
+    public disponibilites: object[] = [];
 
     public foodDetail;
 
     constructor(private foodDetailStoreservice: FoodDetailStoreService) {
-        this.ingredients = [];
     }
 
     public ngOnInit() {
         this.foodDetail = this.foodDetailStoreservice.getFoodInfos();
-        this.setIngredients();
-        console.log(this.foodDetail);
-        this.recipeName = 'recipeName';
+        this.settableauNutrition();
+        this.setAllergenes();
+        this.setComposants();
+        this.recipeName = 'Pâtes (nom par defaut)';
     }
 
-    public setIngredients() {
-        // mock des donnes des ingredients
-        for (let i = 0; i < 3; i++) {
-            this.ingredients[i] = new tableauNutrition();
-        }
+    public settableauNutrition() {
+        // mock des donnes des tableauNutrition
+        this.tableauNutrition = new tableauNutrition();
+    }
+
+    public setComposants(){
+        this.composants.push("semoule de BLE dur de qualité supérieure");
+        this.composants.push("Oeuf");
+    }
+
+    public setAllergenes(){
+        this.allergenes.push("Oeuf");
+        this.allergenes.push("Gluten");
     }
 }

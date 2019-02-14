@@ -1,11 +1,12 @@
 <div class="col mb-4">
-    <h1 class="align-self-center">Nom du produit</h1>
+    <h1 class="align-self-center">{{recipeName}}</h1>
     <hr>
     <h2>Composition</h2>
-    <p *ngFor="let element of ingredients">{{element.name}}</p>
+    <p class="ml-4" *ngFor="let element of composants">{{element}}</p>
     <h2>Valeurs nutritionnelles pour 100g</h2>
     <app-tableauNutrition class="fullWidth"></app-tableauNutrition>
     <h2>Allergènes</h2>
+    <p class="ml-4" *ngFor="let element of allergenes">{{element}}</p>
     <hr>
     <h2>Infos pratiques</h2>
     <div class="row">
