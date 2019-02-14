@@ -3,21 +3,35 @@
     <hr>
     <h2>Composition</h2>
     <p class="ml-4" *ngFor="let element of composants">{{element}}</p>
+    <hr>
     <h2>Valeurs nutritionnelles pour 100g</h2>
     <app-tableauNutrition class="fullWidth"></app-tableauNutrition>
+    <hr>
     <h2>Allergènes</h2>
     <p class="ml-4" *ngFor="let element of allergenes">{{element}}</p>
     <hr>
-    <h2>Infos pratiques</h2>
-    <div class="row">
-        <div class="col" *ngIf="price <=0">
+    <div class="row justify-content-between">
+        <div class="col-4">
+            <h2>Infos pratiques</h2>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-primary btn-block" type="button" (click)="ajouterInfos = !ajouterInfos">
+                Ajouter de nouvelles infos
+            </button>
+        </div>
+    </div>
+    <div class="row" *ngIf="ajouterInfos">
+        <div class="card card-body fadeInDown">
            <app-add-info></app-add-info>
         </div>
-
+    </div>
+    <div class="row">
+        <div class="col" *ngIf="price <=0">
+            <app-add-info></app-add-info>
+        </div>
         <div class="col priceCol" *ngIf="price > 0">
             <app-prix></app-prix>
         </div>
-
         <div class="col mapCol" *ngIf="price > 0">
             <app-maps></app-maps>
         </div>

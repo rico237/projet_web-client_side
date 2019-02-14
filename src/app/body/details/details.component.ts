@@ -15,6 +15,8 @@ export class DetailsComponent implements OnInit {
     public price: number = 1;
     public disponibilites: object[] = [];
 
+    public ajouterInfos: boolean = false;
+
     public foodDetail;
 
     constructor(private foodDetailStoreservice: FoodDetailStoreService) {
