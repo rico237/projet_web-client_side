@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IngredientComponent } from '../ingredient/ingredient.component';
+import { tableauNutrition } from '../tableauNutrition/tableauNutrition.component';
 import { FoodDetailStoreService } from '../../../services/storage/food-detail.store.service';
 
 @Component({
@@ -9,8 +9,9 @@ import { FoodDetailStoreService } from '../../../services/storage/food-detail.st
 })
 export class DetailsComponent implements OnInit {
     public recipeName: string;
-    public ingredients: IngredientComponent[];
+    public ingredients: tableauNutrition[] = [];
     public price: number = 1;
+    public disponibilites: object [] = [];
 
     public foodDetail;
 
@@ -27,8 +28,8 @@ export class DetailsComponent implements OnInit {
 
     public setIngredients() {
         // mock des donnes des ingredients
-        for (let i = 0; i < 5; i++) {
-            this.ingredients[i] = new IngredientComponent();
+        for (let i = 0; i < 3; i++) {
+            this.ingredients[i] = new tableauNutrition();
         }
     }
 }

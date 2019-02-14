@@ -57,7 +57,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { BodyComponent } from "./body/body.component";
 import { RecipePreviewComponent } from "./body/recipePreview/recipePreview.component";
 import { OptionsService } from "../services/options.service";
-import { IngredientComponent } from "./body/ingredient/ingredient.component";
+import { tableauNutrition } from "./body/tableauNutrition/tableauNutrition.component";
 import { DetailsComponent } from "./body/details/details.component";
 import { AddProductComponent } from './add-product/add-product.component';
 import { FoodStoreService } from '../services/storage/food.store.service';
@@ -80,7 +80,7 @@ import { AddInfoComponent } from './body/details/add-info/add-info.component';
         HeaderComponent,
         BodyComponent,
         RecipePreviewComponent,
-        IngredientComponent,
+        tableauNutrition,
         DetailsComponent,
         AddProductComponent,
         RecetteComponent,
