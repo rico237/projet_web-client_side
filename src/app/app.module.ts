@@ -70,6 +70,7 @@ import { LocalStoreService } from '../services/storage/local-store.service';
 import { MapsComponent } from './body/details/maps/maps.component';
 import { AgmCoreModule } from '@agm/core';
 import { PrixComponent } from './body/details/prix/prix.component';
+import { AddInfoComponent } from './body/details/add-info/add-info.component';
 
 @NgModule({
     declarations: [
@@ -87,6 +88,7 @@ import { PrixComponent } from './body/details/prix/prix.component';
         RecetteDetailComponent,
         MapsComponent,
         PrixComponent,
+        AddInfoComponent,
     ],
     imports: [
         HttpClientModule,

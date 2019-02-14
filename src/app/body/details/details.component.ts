@@ -10,7 +10,7 @@ import { FoodDetailStoreService } from '../../../services/storage/food-detail.st
 export class DetailsComponent implements OnInit {
     public recipeName: string;
     public ingredients: IngredientComponent[];
-    public price: number = 1;
+    public price: number = 0;
 
     public foodDetail;
 

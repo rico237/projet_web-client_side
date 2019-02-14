@@ -1,4 +1,4 @@
-<div class="col">
+<div class="col mb-4">
     <h2>Composition</h2>
     <p *ngFor="let element of ingredients">{{element.name}}</p>
     <h2>Valeurs nutritionnelles pour 100g</h2>
@@ -8,37 +8,9 @@
 
     <div class="row">
         <div class="col" *ngIf="price <=0">
-            <form>
-                <div class="form-group">
-                    <small id="emailHelp" class="form-text text-muted">Entrez le prix et le lieu où vous avez acheter
-                        cet article</small>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">€</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Entrez le prix">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Lieu</label>
-                    <input class="form-control" id="exampleInputPassword1" placeholder="Lieu d'achat">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Date d'achat</label>
-                    <div class="input-group">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-primary calendar" (click)="d.toggle()" type="button">choisir la date</button>
-                        </div>
-                        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model"
-                            ngbDatepicker #d="ngbDatepicker">
-                    </div>
-                </div>
-                <hr />
-                <pre>Model: {{ model | json }}</pre>
-                <button type="submit" class="btn btn-block btn-outline-success">Soumettre</button>
-            </form>
-
+           <app-add-info></app-add-info>
         </div>
+
         <div class="col" *ngIf="price > 0">
             <app-prix></app-prix>
         </div>
