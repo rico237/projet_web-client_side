@@ -25,7 +25,7 @@
             "styles": [
               "src/assets/css/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/assets/css/theme.css"
+              "src/assets/css/theme-rose.css"
             ],
             "scripts": []
           },

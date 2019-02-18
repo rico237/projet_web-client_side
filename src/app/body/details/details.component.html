@@ -1,13 +1,19 @@
-<pre>{{ foodDetail | json }}</pre>
-
-<div class="card">
-    <div class="card-header">
-        {{ foodDetail.product_name }}
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+<h1>{{ foodDetail.product_name }}</h1>
+<div class="card mb-3">
+    <div class="row no-gutters">
+        <div class="col-md-7">
+            <div class="card-body">
+                <h5 class="card-title">Caractéristiques du produit</h5>
+                <p class="card-text">
+                    <span class="font-weight-bold">Nom générique : </span> {{ foodDetail.generic_name}} <br />
+                    <span class="font-weight-bold">Quantité : </span> {{ foodDetail.quantity}} <br />
+                </p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <img src="https://static.openfoodfacts.org/images/products/366/111/205/5042/front_fr.15.400.jpg" class="card-img" alt="{{ foodDetail.product_name}}">
+        </div>
     </div>
 </div>
 
@@ -47,3 +53,5 @@
         </div>
     </div>
 </div>
+
+<pre>{{ foodDetail | json }}</pre>
