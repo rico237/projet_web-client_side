@@ -56,8 +56,6 @@ export class RecipePreviewComponent implements OnInit {
     }
 
     public routeDetailProduct(detailRoute, productInfos) {
-        console.log(detailRoute);
-        console.log(productInfos);
         this.foodDetailStoreservice.setFoodInfos(productInfos);
         this.router.navigate([detailRoute + productInfos._id]);
     }

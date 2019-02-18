@@ -55,4 +55,33 @@ export class FoodService {
     public searchImage(name: string): Observable<any> {
         return this.http.post("https://projet-web-ihm.herokuapp.com/products/images", {productName: name, limit: 4});
     }
+
+    public retrieveNutriScore(score) {
+        const nutriScores = [
+            {
+                score: "a",
+                img: require("../assets/img/nutri-scores/nutriscore-a.png")
+            },
+            {
+                score: "b",
+                img: require("../assets/img/nutri-scores/nutriscore-b.png")
+            },
+            {
+                score: "c",
+                img: require("../assets/img/nutri-scores/nutriscore-c.png")
+            },
+            {
+                score: "d",
+                img: require("../assets/img/nutri-scores/nutriscore-d.png")
+            },
+            {
+                score: "e",
+                img: require("../assets/img/nutri-scores/nutriscore-e.png")
+            },
+        ];
+
+        return nutriScores.find((s) => {
+            return s.score === score;
+        });
+    }
 }

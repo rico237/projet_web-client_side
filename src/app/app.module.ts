@@ -70,6 +70,8 @@ import { MapsComponent } from "./body/details/maps/maps.component";
 import { AgmCoreModule } from "@agm/core";
 import { PrixComponent } from "./body/details/prix/prix.component";
 import { AddInfoComponent } from "./body/details/add-info/add-info.component";
+import { SpaceAfterCommaPipe } from '../pipe/space-after-comma.pipe';
+import { DeletePrefixPipe } from '../pipe/delete-prefix.pipe';
 
 @NgModule({
     declarations: [
@@ -87,6 +89,10 @@ import { AddInfoComponent } from "./body/details/add-info/add-info.component";
         MapsComponent,
         PrixComponent,
         AddInfoComponent,
+
+        // Pipes
+        SpaceAfterCommaPipe,
+        DeletePrefixPipe,
     ],
     imports: [
         HttpClientModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { tableauNutrition } from "../tableauNutrition/tableauNutrition.component";
 import { FoodDetailStoreService } from "../../../services/storage/food-detail.store.service";
+import { FoodService } from '../../../services/food.service';
 
 @Component({
     selector: "app-details",
@@ -13,13 +14,17 @@ export class DetailsComponent implements OnInit {
     public composants: string [] = [];
     public allergenes: string[] = [];
     public price: number = 1;
-    public disponibilites: object[] = [];
 
     public ajouterInfos: boolean = false;
 
     public foodDetail;
 
-    constructor(private foodDetailStoreservice: FoodDetailStoreService) {
+    public nutriScoreImage: any = null;
+
+    constructor(
+        private foodDetailStoreservice: FoodDetailStoreService,
+        private foodService: FoodService
+    ) {
     }
 
     public ngOnInit() {
@@ -28,6 +33,7 @@ export class DetailsComponent implements OnInit {
         this.setAllergenes();
         this.setComposants();
         this.recipeName = "Pâtes (nom par defaut)";
+        this.nutriScoreImage = this.foodService.retrieveNutriScore(this.foodDetail.nutrition_grade_fr).img;
     }
 
     public settableauNutrition() {
