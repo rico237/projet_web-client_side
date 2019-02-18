@@ -27,9 +27,6 @@ export class IsAccessAllowedGuard implements CanActivate {
      * @returns {boolean}
      */
     public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        console.log(this.localStoreService.getRoute());
-        console.log(route.data.comeFromPath);
-        console.log(route.data.parent);
         let isAccessAllowed: boolean = false;
 
         if (route.data.comeFromPath !== undefined && route.data.parent !== undefined) {
