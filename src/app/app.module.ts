@@ -57,12 +57,19 @@ import { HttpClientModule } from "@angular/common/http";
 import { BodyComponent } from "./body/body.component";
 import { RecipePreviewComponent } from "./body/recipePreview/recipePreview.component";
 import { OptionsService } from "../services/options.service";
-import { IngredientComponent } from "./body/ingredient/ingredient.component";
+import { tableauNutrition } from "./body/tableauNutrition/tableauNutrition.component";
 import { DetailsComponent } from "./body/details/details.component";
 import { FoodStoreService } from "../services/storage/food.store.service";
 import { FoodDetailStoreService } from "../services/storage/food-detail.store.service";
+import { RecetteComponent } from "./recette/recette.component";
+import { RecetteCommentsComponent } from "./recette/recette-comments/recette-comments.component";
+import { RecetteDetailComponent } from "./recette/recette-detail/recette-detail.component";
 import { IsAccessAllowedGuard } from "../guard/is-access-allowed.guard";
 import { LocalStoreService } from "../services/storage/local-store.service";
+import { MapsComponent } from "./body/details/maps/maps.component";
+import { AgmCoreModule } from "@agm/core";
+import { PrixComponent } from "./body/details/prix/prix.component";
+import { AddInfoComponent } from "./body/details/add-info/add-info.component";
 
 @NgModule({
     declarations: [
@@ -72,8 +79,14 @@ import { LocalStoreService } from "../services/storage/local-store.service";
         HeaderComponent,
         BodyComponent,
         RecipePreviewComponent,
-        IngredientComponent,
+        tableauNutrition,
         DetailsComponent,
+        RecetteComponent,
+        RecetteCommentsComponent,
+        RecetteDetailComponent,
+        MapsComponent,
+        PrixComponent,
+        AddInfoComponent,
     ],
     imports: [
         HttpClientModule,
@@ -123,6 +136,9 @@ import { LocalStoreService } from "../services/storage/local-store.service";
         MatTooltipModule,
         MatTreeModule,
         ScrollingModule,
+        AgmCoreModule.forRoot({
+            apiKey: "AIzaSyCv8Bpz2wUBHrl8ed75wyggnTVrregKx14"
+          })
     ],
     providers: [
         FoodService,

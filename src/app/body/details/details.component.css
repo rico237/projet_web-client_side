@@ -1,3 +1,11 @@
 .fullWidth {
     width: 100%;
 }
+
+.priceCol{
+    min-width: 200px;
+}
+
+.mapCol{
+    min-width: 200px;
+}

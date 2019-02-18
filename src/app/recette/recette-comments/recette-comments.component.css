@@ -1,0 +1,20 @@
+.container{
+	padding-top: 10px;
+}
+
+.number-comment{
+	text-align: right;
+}
+
+.list-comment{
+	padding: 10px 0 20px 0;
+}
+
+.media {
+	border-bottom: 1px solid #9fa4aa4d;
+	padding: 10px 0;
+}
+
+.media:last-child{
+	border-bottom: none;
+}

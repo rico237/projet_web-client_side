@@ -1,6 +1,5 @@
 <pre>{{ foodDetail | json }}</pre>
 
-
 <div class="card">
     <div class="card-header">
         {{ foodDetail.product_name }}
@@ -12,8 +11,39 @@
     </div>
 </div>
 
-<h2>Composition</h2>
-<p *ngFor="let element of ingredients">{{element.name}}</p>
-<h2>Valeurs nutritionnelles pour 100g</h2>
-<app-ingredient class="fullWidth"></app-ingredient>
 <h2>Allergènes</h2>
+<div class="col mb-4">
+    <h1 class="align-self-center">{{recipeName}}</h1>
+    <hr>
+    <h2>Composition</h2>
+    <p class="ml-4" *ngFor="let element of composants">{{element}}</p>
+    <hr>
+    <h2>Allergènes</h2>
+    <p class="ml-4" *ngFor="let element of allergenes">{{element}}</p>
+    <hr>
+    <h2>Valeurs nutritionnelles</h2>
+    <app-tableauNutrition class="fullWidth"></app-tableauNutrition>
+    <hr>
+    <div class="row justify-content-between">
+        <div class="col-4">
+            <h2>Infos pratiques</h2>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-primary btn-block" type="button" (click)="ajouterInfos = !ajouterInfos">
+                Ajouter de nouvelles infos
+            </button>
+        </div>
+    </div>
+    <app-add-info *ngIf="ajouterInfos"></app-add-info>
+    <div class="row">
+        <div class="col" *ngIf="price <=0">
+            <app-add-info></app-add-info>
+        </div>
+        <div class="col priceCol" *ngIf="price > 0">
+            <app-prix></app-prix>
+        </div>
+        <div class="col mapCol" *ngIf="price > 0">
+            <app-maps></app-maps>
+        </div>
+    </div>
+</div>
