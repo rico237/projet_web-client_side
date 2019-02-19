@@ -84,4 +84,9 @@ export class FoodService {
             return s.score === score;
         });
     }
+
+    getStores(productId) : Observable<any> {
+        console.log("getting stores")
+        return this.http.get("https://projet-web-ihm.herokuapp.com/products/5c658547d903a34c306ee7ea/price",productId)
+    }
 }
