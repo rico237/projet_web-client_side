@@ -30,6 +30,7 @@ export class PrixComponent implements OnInit {
         store._id = value._id;
         store.id_product = value.id_product;
         store.id_store = value.id_store;
+        store.name_store = value.name_store;
         store.adresse = value.adresse;
         store.lat = value.lat;
         store.long = value.long;
