@@ -1,4 +1,9 @@
-<app-header></app-header>
-<div class="container">
-    <router-outlet></router-outlet>
+<div *ngIf="router.url === '/h'; else elseBlock">
+	<router-outlet></router-outlet>
 </div>
+<ng-template #elseBlock>
+	<app-header></app-header>
+	<div class="container">
+		<router-outlet></router-outlet>
+	</div>	
+</ng-template>

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { SearchOptions } from "../business/search-options";
 import { OptionsService } from "../services/options.service";
+import { Router } from '@angular/router';
 import * as _ from "lodash";
 
 @Component({
@@ -12,7 +13,7 @@ import * as _ from "lodash";
 export class AppComponent implements OnInit {
     public title = "projet-web-client-side";
 
-    constructor() {
+    constructor(public router: Router) {
     }
 
     public ngOnInit(): void {
