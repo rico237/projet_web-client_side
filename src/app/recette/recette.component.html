@@ -1,2 +1,25 @@
-<app-recette-detail></app-recette-detail>
-<app-recette-comments></app-recette-comments>
+<!-- <app-recette-detail></app-recette-detail>
+<app-recette-comments></app-recette-comments> -->
+
+<div class="container">
+  <h1>Comment List <button class="btn btn-success" (click)="logout()">Logout</button></h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Content</th>
+        <th>Date</th>
+        <th>Author id</th>
+        <th>Recette id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comment of comments">
+        
+        <td>{{ comment.content }}</td>
+        <td>{{ comment.date }}</td>
+        <td>{{ comment.author_id }}</td>
+        <td>{{ comment.recette_id }} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

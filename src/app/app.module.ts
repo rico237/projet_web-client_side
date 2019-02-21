@@ -73,6 +73,8 @@ import { AddInfoComponent } from "./body/details/add-info/add-info.component";
 import { SpaceAfterCommaPipe } from '../pipe/space-after-comma.pipe';
 import { DeletePrefixPipe } from '../pipe/delete-prefix.pipe';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
     declarations: [
@@ -95,6 +97,8 @@ import { HomeComponent } from './home/home.component';
         SpaceAfterCommaPipe,
         DeletePrefixPipe,
         HomeComponent,
+        LoginComponent,
+        SignupComponent,
     ],
     imports: [
         HttpClientModule,

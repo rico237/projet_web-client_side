@@ -1,19 +1,31 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+
+import { IsAccessAllowedGuard } from "../guard/is-access-allowed.guard";
+
 import { DetailsComponent } from "./body/details/details.component";
 import { BodyComponent } from "./body/body.component";
 import { HomeComponent } from "./home/home.component";
 import { RecetteComponent } from './recette/recette.component';
 import { RecetteDetailComponent } from './recette/recette-detail/recette-detail.component';
-import { IsAccessAllowedGuard } from "../guard/is-access-allowed.guard";
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 
 const routes: Routes = [
-    {path: "", redirectTo: "/h", pathMatch: "full"},
+
+    // General
+    {path: "", redirectTo: "/home", pathMatch: "full"},
     {path: "home", component: BodyComponent},
     {path: "h", component: HomeComponent},
+    {path: "login", component: LoginComponent},
+    {path: "signup", component: SignupComponent},
+
+    // recettes
     {path: "recettes", component: RecetteComponent},
     {path: "recettes/:id", component: RecetteDetailComponent},
+
+    // Produits
     {
         path: "detail/:id",
         component: DetailsComponent,

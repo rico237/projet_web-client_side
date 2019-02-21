@@ -1,0 +1,28 @@
+<div class="container text-center">
+	<div class="form-container">
+		<form class="form-signin" (ngSubmit)="login()" #loginForm="ngForm">
+			<div class="alert alert-warning alert-dismissible" role="alert" *ngIf="message !== ''">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				{{message}}
+			</div>
+			<h2 class="h3 mb-3 font-weight-normal">Se connecter</h2>
+			<label for="inputEmail" class="sr-only">E-mail</label>
+			<input type="email" class="form-control" placeholder="E-mail" [(ngModel)]="loginData.username" name="username" required/>
+			<label for="inputPassword" class="sr-only">Mot de passe</label>
+			<input type="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="loginData.password" name="password" required/>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.form.valid">Sign in</button>
+			<p class="text-center">
+				Aucun compte ? <a [routerLink]="['/signup']">Créer un compte</a>
+			</p>
+		</form>
+
+		<p class="text-center">ou</p>
+
+		<div class="anonymous-signin">
+			<p class="text-center">
+				<button class="btn btn-lg btn-primary btn-block">Compte anonyme</button>
+			</p>
+			<p class="mt-5 mb-3 text-muted text-center">© 2017-2019</p>
+		</div>
+	</div>
+</div>
