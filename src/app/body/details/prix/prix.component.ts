@@ -25,6 +25,7 @@ export class PrixComponent implements OnInit {
   getDispos(){
     this.foodService.getStores("5c658547d903a34c306ee7ea").subscribe((stor) => {
       const prices = stor.prices;
+      this.dispos = [];
       prices.forEach((value) => {
         const store : Store = new Store();
         store._id = value._id;
