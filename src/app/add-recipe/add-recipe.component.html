@@ -1,0 +1,57 @@
+<h1>Ajouter une recette</h1>
+<p>
+    Complétez ce formulaire pour ajouter une recette.
+</p>
+
+<form novalidate [formGroup]="form" (ngSubmit)="addRecipe()" style="margin-bottom: 50px">
+    <div class="form-group">
+        <label for="name">Nom de la recette</label>
+        <input type="text" class="form-control" id="name" (change)="controlValue()" (keydown)="onKeyDown($event)" (blur)="searchImage()" formControlName="name" placeholder="Entrez un nom de recette"
+               [ngClass]="{
+                            'is-invalid': form.controls.name.invalid
+                                          && form.controls.name.touched,
+                            'is-valid': form.controls.name.valid
+                    }">
+
+    </div>
+    <div class="form-group">
+        <label>Image de la recette</label>
+        <small id="imageHelp" class="form-text text-muted">Entrez un nom de recette pour faire apparaître une sélection d'image.</small>
+        <div *ngIf="isLoadingImages">
+            <div class="text-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-3" *ngFor="let image of images">
+                <div [ngStyle]="{'background-image': 'url('+ image.url +')'}" class="product-image" (click)="selectImageUrl(image.url)"
+                [ngClass]="{'selected': image.url === imageUrl}"
+                ></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Tags</label>
+        <tag-input [secondaryPlaceholder]="'Entrez une série de tags'" [placeholder]="'Nouveau tag'"
+            [separatorKeyCodes]="[13, 188]" formControlName="tags"></tag-input>
+        <small id="tagsHelp" class="form-text text-muted" style="width: 600px">Ajoutez des tags à votre recete pour qu'elle puisse être recherchée plus facilement ! Les tags peuvent être ajoutés en séprant par une virgule, ou en appuyant sur la touche entrée.</small>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea formControlName="description" class="form-control" id="description" name="description" rows="15"
+                  [ngClass]="{
+                            'is-invalid': form.controls.description.invalid
+                                          && form.controls.description.touched,
+                            'is-valid': form.controls.description.valid
+                    }"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary"
+            [disabled]="form.controls.name.invalid
+                    || form.controls.description.invalid
+                    || !imageUrl"
+    >Créer la recette</button>
+</form>

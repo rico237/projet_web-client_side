@@ -53,10 +53,6 @@ export class FoodService {
         // return this.http.post();
     }
 
-    public searchImage(name: string): Observable<any> {
-        return this.http.post("https://projet-web-ihm.herokuapp.com/products/images", {productName: name, limit: 4});
-    }
-
     public retrieveNutriScore(score) {
         const nutriScores = [
             {

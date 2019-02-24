@@ -4,7 +4,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CdkTableModule } from "@angular/cdk/table";
@@ -46,6 +45,7 @@ import {
     MatTooltipModule,
     MatTreeModule,
 } from "@angular/material";
+import { TagInputModule } from "ngx-chips";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SearchbarComponent } from "./searchbar/searchbar.component";
 import { HeaderComponent } from "./header/header.component";
@@ -70,11 +70,13 @@ import { MapsComponent } from "./body/details/maps/maps.component";
 import { AgmCoreModule } from "@agm/core";
 import { PrixComponent } from "./body/details/prix/prix.component";
 import { AddInfoComponent } from "./body/details/add-info/add-info.component";
-import { SpaceAfterCommaPipe } from '../pipe/space-after-comma.pipe';
-import { DeletePrefixPipe } from '../pipe/delete-prefix.pipe';
+import { SpaceAfterCommaPipe } from "../pipe/space-after-comma.pipe";
+import { DeletePrefixPipe } from "../pipe/delete-prefix.pipe";
 import { BoldPipe } from "../pipe/bold.pipe";
 import { UniqPipe } from "../pipe/uniq.pipe";
 import { ToNumberPipe } from "../pipe/to-number.pipe";
+import { AddRecipeComponent } from "./add-recipe/add-recipe.component";
+import { RecipeService } from "../services/recipe.service";
 
 @NgModule({
     declarations: [
@@ -99,6 +101,7 @@ import { ToNumberPipe } from "../pipe/to-number.pipe";
         BoldPipe,
         UniqPipe,
         ToNumberPipe,
+        AddRecipeComponent,
     ],
     imports: [
         HttpClientModule,
@@ -150,7 +153,8 @@ import { ToNumberPipe } from "../pipe/to-number.pipe";
         ScrollingModule,
         AgmCoreModule.forRoot({
             apiKey: "AIzaSyCv8Bpz2wUBHrl8ed75wyggnTVrregKx14"
-          })
+          }),
+        TagInputModule
     ],
     providers: [
         FoodService,
@@ -158,7 +162,8 @@ import { ToNumberPipe } from "../pipe/to-number.pipe";
         FoodStoreService,
         FoodDetailStoreService,
         IsAccessAllowedGuard,
-        LocalStoreService
+        LocalStoreService,
+        RecipeService
     ],
     bootstrap: [AppComponent]
 })
