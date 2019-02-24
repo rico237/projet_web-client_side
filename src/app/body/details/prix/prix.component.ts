@@ -9,8 +9,7 @@ import { Store } from "../../../../business/store";
 export class PrixComponent implements OnInit {
   public dispos: Store[] = [];
 
-  constructor(private foodService: FoodService
-    ) {  }
+  constructor(private foodService: FoodService) { }
 
   ngOnInit() {
     this.getDispos();
@@ -22,12 +21,12 @@ export class PrixComponent implements OnInit {
     }
   }
 
-  getDispos(){
+  getDispos() {
     this.foodService.getStores("5c658547d903a34c306ee7ea").subscribe((stor) => {
       const prices = stor.prices;
       this.dispos = [];
       prices.forEach((value) => {
-        const store : Store = new Store();
+        const store: Store = new Store();
         store._id = value._id;
         store.id_product = value.id_product;
         store.id_store = value.id_store;
@@ -36,10 +35,10 @@ export class PrixComponent implements OnInit {
         store.lat = value.lat;
         store.long = value.long;
         store.prix = value.prix;
-        this.dispos.push(store); 
+        this.dispos.push(store);
       })
     });
-    console.error (this.dispos)
+    console.error(this.dispos)
   }
 
 

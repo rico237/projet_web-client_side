@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-6">
                             <label for="inputCity">Nom du magasin</label>
-                            <input type="text" class="form-control" id="inputStoreName"
+                            <input type="text" class="form-control" #inputStoreName
                                 placeholder="Entrez le nom du magasin">
                         </div>
                         <div class="form-group col-6">
@@ -32,7 +32,7 @@
                     <div class="form-row">
                         <div class="form-group col-12">
                             <label for="inputCity">Adresse du magasin</label>
-                            <input type="text" class="form-control" id="inputStoreAddress" placeholder="ex : 123 Rue abc">
+                            <input type="text" class="form-control" #inputStoreAddress placeholder="ex : 123 Rue abc">
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-block btn-success">Soumettre</button>
+            <button type="submit" class="btn btn-block btn-success" (click)="submitStore(inputStoreName.value)">Soumettre</button>
 
         </form>
     </div>
