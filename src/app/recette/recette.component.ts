@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from "@angular/router";
 import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
+import { RecipeService } from '../../services/recipe.service';
 
 @Component({
 	selector: 'app-recette',
@@ -10,27 +11,28 @@ import { tap, catchError } from 'rxjs/operators';
 	styleUrls: ['./recette.component.css']
 })
 export class RecetteComponent implements OnInit {
-	comments : any;
+	recettes : any;
 
-	constructor(private http: HttpClient, private router: Router) { }
+	constructor(
+		private http: HttpClient, 
+		private router: Router,
+		private recipeService: RecipeService
+	) {}
 
 	ngOnInit() {
-		let httpOptions = {
-			headers: new HttpHeaders({ 'Authorization': localStorage.getItem('jwtToken') })
-		};
-		this.http.get('/api/book', httpOptions).subscribe(data => {
-			this.comments = data;
-			console.log(this.comments);
-		}, err => {
-			if(err.status === 401) {
-				this.router.navigate(['login']);
-			}
-		});
+		this.recipeService.getAllRecipes().subscribe((response) => this.recettes = response.recipes );
+	}
+
+	isLogged(): boolean{
+		return localStorage.getItem('jwtToken') !== null ;
 	}
 
 	logout() {
 		localStorage.removeItem('jwtToken');
-		this.router.navigate(['login']);
+		this.router.navigate(['home']);
 	}
 
+    public routeDetailProduct(detailRoute, productInfos) {
+        this.router.navigate([detailRoute + productInfos]);
+    }
 }

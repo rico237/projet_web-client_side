@@ -19,9 +19,9 @@ import { AddRecipeComponent } from "./add-recipe/add-recipe.component";
 const routes: Routes = [
 
     // General
-    {path: "", redirectTo: "/home", pathMatch: "full"},
+    // {path: "", redirectTo: "/", pathMatch: "full"},
     {path: "home", component: BodyComponent},
-    {path: "h", component: HomeComponent},
+    {path: "", component: HomeComponent},
     {path: "login", component: LoginComponent},
     {path: "signup", component: SignupComponent},
 

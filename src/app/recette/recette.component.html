@@ -1,25 +1,20 @@
 <div class="container">
-  <h1>Comment List <button class="btn btn-success" (click)="logout()">Logout</button></h1>
+  <h1>Liste des recettes</h1>
   <table class="table">
     <thead>
       <tr>
-        <th>Content</th>
-        <th>Date</th>
-        <th>Author id</th>
-        <th>Recette id</th>
+        <th>Titre</th>
+        <th>Body</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let comment of comments">
+      <tr *ngFor="let recette of recettes">
         
-        <td>{{ comment.content }}</td>
-        <td>{{ comment.date }}</td>
-        <td>{{ comment.author_id }}</td>
-        <td>{{ comment.recette_id }} </td>
+        <td>{{ recette.title }}</td>
+        <td>{{ recette.body }}</td>
+        <td><button class="btn btn-primary btn-lg" (click)="routeDetailProduct('recettes/', recette._id)" >Voir la recette</button></td>
       </tr>
     </tbody>
   </table>
 </div>
-
-<app-recette-detail></app-recette-detail>
-<app-recette-comments></app-recette-comments>
