@@ -16,7 +16,7 @@ export class AddInfoComponent implements OnInit {
   constructor(private foodService: FoodService) { }
 
   ngOnInit() {
-    console.error(this.productInfos)
+    console.log(this.productInfos);
   }
 
   submitStore(name,prix,address,lat,lng){

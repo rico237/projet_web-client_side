@@ -25,7 +25,7 @@ export class PrixComponent implements OnInit {
     this.foodService.getStores(this.productInfos._id).subscribe((stor) => {
       const prices = stor.prices;
       this.dispos = [];
-      prices.forEach((value) => {
+      prices.forEach((value) => {  
         const store: Store = new Store();
         store.id_product = value.id_product;
         store.id_store = value.id_store;
@@ -38,6 +38,4 @@ export class PrixComponent implements OnInit {
       })
     });
   }
-
-
 }

@@ -88,7 +88,7 @@ export class FoodService {
     }
 
     getStores(productId) : Observable<any> {
-        return this.http.get("https://projet-web-ihm.herokuapp.com/products/5c658547d903a34c306ee7e8/price",productId)
+        return this.http.get("https://projet-web-ihm.herokuapp.com/products/price",productId)
     }
 //5c658547d903a34c306ee7ea/
     addNewStore(store){
