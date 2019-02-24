@@ -101,7 +101,7 @@
             </button>
         </div>
     </div>
-    <app-add-info *ngIf="ajouterInfos" [productInfos]="foodDetail"></app-add-info>
+    <app-add-info *ngIf="ajouterInfos" [productInfos]="foodDetail" (submission)="getDispos()"></app-add-info>
     <div class="row">
         <div class="col priceCol" *ngIf="disponible.length > 0">
             <app-prix [productInfos]="foodDetail"></app-prix>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FoodService } from '../../../../services/food.service';
 import { Store } from '../../../../business/store';
 import { Receipe } from '../../../../business/receipe';
@@ -13,6 +13,8 @@ export class AddInfoComponent implements OnInit {
   public newStore : Store = new Store();
   
   @Input() productInfos;
+  @Output() submission = new EventEmitter<boolean>();
+
   constructor(private foodService: FoodService) { }
 
   ngOnInit() {
@@ -30,6 +32,10 @@ export class AddInfoComponent implements OnInit {
       this.newStore.lat = lat;
       this.newStore.long = lng;
       this.foodService.addNewStore(this.newStore);
+      setTimeout(()=>{
+        this.submission.emit(true);
+      },1000);
+      
     } else {
       console.error("one of the fields is incorrectly filled")
     }
