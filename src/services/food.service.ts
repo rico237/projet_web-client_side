@@ -61,23 +61,23 @@ export class FoodService {
         const nutriScores = [
             {
                 score: "a",
-                img: require("../assets/img/nutri-scores/nutriscore-a.png")
+                img: "../assets/img/nutri-scores/nutriscore-a.png"
             },
             {
                 score: "b",
-                img: require("../assets/img/nutri-scores/nutriscore-b.png")
+                img: "../assets/img/nutri-scores/nutriscore-b.png"
             },
             {
                 score: "c",
-                img: require("../assets/img/nutri-scores/nutriscore-c.png")
+                img: "../assets/img/nutri-scores/nutriscore-c.png"
             },
             {
                 score: "d",
-                img: require("../assets/img/nutri-scores/nutriscore-d.png")
+                img: "../assets/img/nutri-scores/nutriscore-d.png"
             },
             {
                 score: "e",
-                img: require("../assets/img/nutri-scores/nutriscore-e.png")
+                img: "../assets/img/nutri-scores/nutriscore-e.png"
             },
         ];
 
