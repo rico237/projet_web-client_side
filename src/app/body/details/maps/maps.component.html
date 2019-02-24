@@ -1,13 +1,12 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<h3>{{ title }}</h3>
-<agm-map [zoom]="15" [latitude]="lat" [longitude]="lng">
-  <agm-marker *ngFor="let m of dispos; let i = index"
-               [latitude]="m.lat"
-               [longitude]="m.long"
-               [label]="m.prix">
-    <agm-info-window>
-     <strong> {{m.name_store}}, {{m.prix}} €</strong>
-    </agm-info-window>
-  </agm-marker>
-</agm-map>
+<div *ngIf="dispos.length > 0">
+  <h3>{{ title }}</h3>
+  <agm-map [zoom]="15" [latitude]="lat" [longitude]="lng">
+    <agm-marker *ngFor="let m of dispos; let i = index" [latitude]="m.lat" [longitude]="m.long" [label]="m.prix">
+      <agm-info-window>
+        <strong> {{m.name_store}}, {{m.prix}} €</strong>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>

@@ -1,5 +1,4 @@
 export class Store {
-    public _id: string;
     public id_product : string;
     public id_store	: string;
     public name_store: string;
