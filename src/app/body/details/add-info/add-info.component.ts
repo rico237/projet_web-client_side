@@ -21,12 +21,12 @@ export class AddInfoComponent implements OnInit {
 
   submitStore(name,prix,address,lat,lng){
     // recuperer les input et les envoyer au server via food service
-    if (name && !isNaN(prix) && address && !isNaN(lat) && !isNaN(lng)){
+    if (name && !isNaN(prix) && !isNaN(lat) && !isNaN(lng)){
       this.newStore.id_store="";
       this.newStore.id_product= this.productInfos._id;
       this.newStore.name_store=name;
       this.newStore.prix = prix;
-      this.newStore.adresse = address;
+      this.newStore.adresse = address || "";
       this.newStore.lat = lat;
       this.newStore.long = lng;
       this.foodService.addNewStore(this.newStore);

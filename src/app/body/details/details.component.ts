@@ -12,7 +12,7 @@ import { Store } from 'src/business/store';
 export class DetailsComponent implements OnInit {
     public recipeName: string;
     public tableauNutrition: tableauNutrition;
-    public composants: string [] = [];
+    public composants: string[] = [];
     public allergenes: string[] = [];
     public price: number = 1;
     public disponible: Store[] = [];
@@ -37,9 +37,7 @@ export class DetailsComponent implements OnInit {
         this.recipeName = "Pâtes (nom par defaut)";
         this.nutriScoreImage = this.foodService.retrieveNutriScore(this.foodDetail.nutrition_grade_fr).img;
         this.getDispos();
-        if (this.disponible.length === 0){
-            this.ajouterInfos = true;
-        }
+        this.ajouterInfos = true;
     }
 
     public settableauNutrition() {
@@ -59,19 +57,20 @@ export class DetailsComponent implements OnInit {
 
     getDispos() {
         this.foodService.getStores(this.foodDetail._id).subscribe((stor) => {
-          const prices = stor.prices;
-          this.disponible = [];
-          prices.forEach((value) => {
-            const store: Store = new Store();
-            store.id_product = value.id_product;
-            store.id_store = value.id_store;
-            store.name_store = value.name_store;
-            store.adresse = value.adresse;
-            store.lat = value.lat;
-            store.long = value.long;
-            store.prix = value.prix;
-            this.disponible.push(store);
-          })
+            const prices = stor.prices;
+            this.disponible = [];
+            prices.forEach((value) => {
+                const store: Store = new Store();
+                store.id_product = value.id_product;
+                store.id_store = value.id_store;
+                store.name_store = value.name_store;
+                store.adresse = value.adresse;
+                store.lat = value.lat;
+                store.long = value.long;
+                store.prix = value.prix;
+                this.disponible.push(store);
+                this.ajouterInfos = false;
+            })
         });
-      }
+    }
 }
