@@ -16,22 +16,20 @@ export class AddInfoComponent implements OnInit {
   constructor(private foodService: FoodService) { }
 
   ngOnInit() {
-    console.error(this.productInfos)
+    console.log(this.productInfos);
   }
 
   submitStore(name,prix,address,lat,lng){
     // recuperer les input et les envoyer au server via food service
-    console.log("trying to submit a store");
     if (name && !isNaN(prix) && address && !isNaN(lat) && !isNaN(lng)){
-      this.newStore.id_store=null;
+      this.newStore.id_store="";
       this.newStore.id_product= this.productInfos._id;
       this.newStore.name_store=name;
       this.newStore.prix = prix;
       this.newStore.adresse = address;
       this.newStore.lat = lat;
       this.newStore.long = lng;
-      console.log(this.newStore)
-     // this.foodService.addNewStore(this.newStore);
+      this.foodService.addNewStore(this.newStore);
     } else {
       console.error("one of the fields is incorrectly filled")
     }

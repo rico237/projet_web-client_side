@@ -91,6 +91,8 @@ export class FoodService {
         // route to add a new store to DB
         console.log("sending following store to DB");
         console.log(store);
-        return this.http.post("https://projet-web-ihm.herokuapp.com/products/price",store);
+        return this.http.post("https://projet-web-ihm.herokuapp.com/products/price", store).subscribe((response) => {
+            console.log (response);
+        });
     }
 }

@@ -103,13 +103,10 @@
     </div>
     <app-add-info *ngIf="ajouterInfos" [productInfos]="foodDetail"></app-add-info>
     <div class="row">
-        <div class="col" *ngIf="price <=0">
-            <app-add-info [productInfos]="foodDetail"></app-add-info>
-        </div>
-        <div class="col priceCol" *ngIf="price > 0">
+        <div class="col priceCol" *ngIf="disponible.length > 0">
             <app-prix [productInfos]="foodDetail"></app-prix>
         </div>
-        <div class="col mapCol" *ngIf="price > 0">
+        <div class="col mapCol" *ngIf="disponible.length > 0">
             <app-maps [productInfos]="foodDetail"></app-maps>
         </div>
     </div>
