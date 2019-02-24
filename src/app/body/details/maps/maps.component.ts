@@ -37,9 +37,6 @@ export class MapsComponent implements OnInit {
 			})
 			this.lat = parseFloat(this.dispos[0].lat);
 			this.lng = parseFloat(this.dispos[0].long);
-			console.log(this.lat);
-			console.log(this.lng);
-			console.log(this.dispos);
 		});
 	}
 }

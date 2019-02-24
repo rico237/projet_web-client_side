@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { map } from "rxjs/internal/operators";
 import { FoodStoreService } from './storage/food.store.service';
+import { Store }from './../business/store';
 
 @Injectable()
 export class FoodService {
@@ -86,7 +87,12 @@ export class FoodService {
     }
 
     getStores(productId) : Observable<any> {
-        console.log("getting stores")
         return this.http.get("https://projet-web-ihm.herokuapp.com/products/5c658547d903a34c306ee7ea/price",productId)
+    }
+
+    addNewStore(store){
+        // route to add a new store to DB
+        console.log("sending following store to DB");
+        console.log(store);
     }
 }

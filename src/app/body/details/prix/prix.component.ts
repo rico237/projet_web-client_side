@@ -38,7 +38,6 @@ export class PrixComponent implements OnInit {
         this.dispos.push(store);
       })
     });
-    console.error(this.dispos)
   }
 
 

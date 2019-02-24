@@ -18,8 +18,18 @@ export class AddInfoComponent implements OnInit {
   submitStore(name,prix,address,lat,lng){
     // recuperer les input et les envoyer au server via food service
     console.log("trying to submit a store");
-    this.newStore.id_store='0000';
-    this.newStore.id_product='0000';
-    
+    if (name && prix && address && lat && lng){
+      this.newStore._id = '0000';
+      this.newStore.id_store='0000';
+      this.newStore.id_product='0000'; // to be catched
+      this.newStore.name_store=name;
+      this.newStore.prix = prix;
+      this.newStore.adresse = address;
+      this.newStore.lat = lat;
+      this.newStore.long = lng;
+      this.foodService.addNewStore(this.newStore);
+    } else {
+      console.error("one of the fields is incorrectly filled")
+    }
   }
 }
