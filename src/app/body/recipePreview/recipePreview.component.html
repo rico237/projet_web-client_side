@@ -1,10 +1,10 @@
 <div class="row align-items-stretch flex-fill">
     <div class="col my-2 mx-auto" *ngFor="let res of searchResult">
-        <div class="card text-center ml-auto mr-auto mb-2 p-1 h-100" style="width: 12rem;">
+        <div class="card text-center ml-auto mr-auto mb-2 p-1 h-100">
             <img src={{imgSrc}} class="card-img-top" alt="ingredient image">
             <h4 class="card-title align-middle"></h4>
             <div class="card-body">
-                <h3>{{res.product_name}} </h3>
+                <h5>{{res.product_name}}</h5>
                 </div>
             <div class="card-footer nopadding">
                 <button class='btn btn-block myButt over mb-0' (click)="routeDetailProduct('detail/', res)">
