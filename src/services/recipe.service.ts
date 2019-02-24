@@ -13,7 +13,7 @@ export class RecipeService {
         return this.http.post("https://projet-web-ihm.herokuapp.com/products/images", {productName: name, limit: 4});
     }
 
-    public createRecipe(recipe: Object) {
+    public createRecipe(recipe) {
         return this.http.post("https://projet-web-ihm.herokuapp.com/recipes/create", recipe);
     }
 

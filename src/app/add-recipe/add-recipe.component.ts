@@ -74,7 +74,7 @@ export class AddRecipeComponent implements OnInit {
             tags: this.retrieveFormFieldValue("tags").map((t) => t.value)
         };
 
-        this.recipeService.createRecipe(recipe).subscribe((response) => {
+        this.recipeService.createRecipe(recipe).subscribe((response: any) => {
             this.router.navigate(["/recettes/" + response.recipe._id]);
         });
     }

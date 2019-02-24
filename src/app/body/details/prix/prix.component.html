@@ -1,18 +1,22 @@
-<h3>Prix</h3>
-<!-- <button class="btn btn-primary btn-block">zeuby</button>
--->
-<div class="list-group">
-  <a class="list-group-item list-group-item-action" *ngFor="let item of dispos">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Nom du produit</h5>
+
+<div *ngIf="dispos.length > 0">
+    <h3>Prix</h3>
+    <!-- <button class="btn btn-primary btn-block">zeuby</button>
+    -->
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action" *ngFor="let item of dispos">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{item.name_store}}</h5>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <p class="mb-1">{{item.adresse}}</p>
+          </div>
+          <div class="col-4">
+            <h3>{{item.prix}} €</h3>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="row">
-      <div class="col-8">
-        <p class="mb-1">Nom du magasin et text optionnel</p>
-      </div>
-      <div class="col-4">
-        <h3>PRIX</h3>
-      </div>
-    </div>
-  </a>
+    
 </div>
