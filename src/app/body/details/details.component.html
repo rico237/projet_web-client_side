@@ -1,7 +1,7 @@
 <h1>{{ foodDetail.product_name }}</h1>
 <div class="card mb-3">
     <div class="row no-gutters">
-        <div class="col-md-7">
+        <div class="col-md-8">
             <div class="card-body">
                 <h2 class="card-title">Caractéristiques du produit</h2>
                 <div class="card-text">
@@ -16,8 +16,8 @@
             </div>
         </div>
 
-        <div class="col-md-5">
-            <img src="{{ foodDetail.image_url }}" class="card-img" alt="{{ foodDetail.product_name}}">
+        <div class="col-md-3 offset-md-1 text-right">
+            <div [ngStyle]="{'background-image': 'url(' + foodDetail.image_url + ')'}" class="product-image"></div>
         </div>
     </div>
 </div>
@@ -31,13 +31,13 @@
                 <br />
                 <span class="font-weight-bold">Substances ou produits provoquant des allergies ou intolérances : </span> {{ foodDetail.allergens | deletePrefix : "en:" | uniq }} <br />
             </p>
+            <span class="font-weight-bold">Classification Groupe NOVA : </span> {{ foodDetail.nova_group }} <br />
         </div>
     </div>
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">Informations nutritionnelles</h2>
             <p class="card-text">
-                <span class="font-weight-bold">Classification Groupe NOVA : </span> {{ foodDetail.nova_group }} <br />
                 <img src="{{ nutriScoreImage }}" />
             </p>
 
