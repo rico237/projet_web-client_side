@@ -8,8 +8,12 @@ import { BodyComponent } from "./body/body.component";
 import { HomeComponent } from "./home/home.component";
 import { RecetteComponent } from './recette/recette.component';
 import { RecetteDetailComponent } from './recette/recette-detail/recette-detail.component';
+
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+
+import { AddRecipeComponent } from "./add-recipe/add-recipe.component";
+
 
 
 const routes: Routes = [
@@ -23,6 +27,7 @@ const routes: Routes = [
 
     // recettes
     {path: "recettes", component: RecetteComponent},
+    {path: "recettes/creer", component: AddRecipeComponent},
     {path: "recettes/:id", component: RecetteDetailComponent},
 
     // Produits

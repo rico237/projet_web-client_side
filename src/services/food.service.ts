@@ -3,6 +3,8 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { map } from "rxjs/internal/operators";
 import { FoodStoreService } from './storage/food.store.service';
+import { Store }from './../business/store';
+declare var require: any;
 
 @Injectable()
 export class FoodService {
@@ -52,10 +54,6 @@ export class FoodService {
         // return this.http.post();
     }
 
-    public searchImage(name: string): Observable<any> {
-        return this.http.post("https://projet-web-ihm.herokuapp.com/products/images", {productName: name, limit: 4});
-    }
-
     public retrieveNutriScore(score) {
         const nutriScores = [
             {
@@ -83,5 +81,16 @@ export class FoodService {
         return nutriScores.find((s) => {
             return s.score === score;
         });
+    }
+
+    getStores(productId) : Observable<any> {
+        return this.http.get("https://projet-web-ihm.herokuapp.com/products/price",productId)
+    }
+//5c658547d903a34c306ee7ea/
+    addNewStore(store){
+        // route to add a new store to DB
+        console.log("sending following store to DB");
+        console.log(store);
+        return this.http.post("https://projet-web-ihm.herokuapp.com/products/price",store);
     }
 }
