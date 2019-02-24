@@ -72,6 +72,9 @@ import { PrixComponent } from "./body/details/prix/prix.component";
 import { AddInfoComponent } from "./body/details/add-info/add-info.component";
 import { SpaceAfterCommaPipe } from '../pipe/space-after-comma.pipe';
 import { DeletePrefixPipe } from '../pipe/delete-prefix.pipe';
+import { BoldPipe } from "../pipe/bold.pipe";
+import { UniqPipe } from "../pipe/uniq.pipe";
+import { ToNumberPipe } from "../pipe/to-number.pipe";
 
 @NgModule({
     declarations: [
@@ -93,6 +96,9 @@ import { DeletePrefixPipe } from '../pipe/delete-prefix.pipe';
         // Pipes
         SpaceAfterCommaPipe,
         DeletePrefixPipe,
+        BoldPipe,
+        UniqPipe,
+        ToNumberPipe,
     ],
     imports: [
         HttpClientModule,

@@ -27,9 +27,9 @@
         <div class="card-body">
             <h2 class="card-title">Ingrédients</h2>
             <p class="card-text">
-                <span class="font-weight-bold">Liste des ingrédients : </span> {{ foodDetail.ingredients_text }} <br />
+                <span class="font-weight-bold">Liste des ingrédients : </span> <span [innerHTML]="foodDetail.ingredients_text | bold"></span> <br />
                 <br />
-                <span class="font-weight-bold">Substances ou produits provoquant des allergies ou intolérances : </span> {{ foodDetail.allergens | deletePrefix : "en:" }} <br />
+                <span class="font-weight-bold">Substances ou produits provoquant des allergies ou intolérances : </span> {{ foodDetail.allergens | deletePrefix : "en:" | uniq }} <br />
             </p>
         </div>
     </div>
@@ -37,29 +37,60 @@
         <div class="card-body">
             <h2 class="card-title">Informations nutritionnelles</h2>
             <p class="card-text">
-                <span class="font-weight-bold">Classification Groupe NOVA : </span> {{ foodDetail.nova_group | uppercase }} <br />
-
-
+                <span class="font-weight-bold">Classification Groupe NOVA : </span> {{ foodDetail.nova_group }} <br />
                 <img src="{{ nutriScoreImage }}" />
-
             </p>
+
+            <table class="table table-striped table-sm">
+                <thead>
+                <tr>
+                    <th scope="col">Nutriment</th>
+                    <th scope="col">Pour 100 g / 100 ml</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Énergie</td>
+                    <td>{{ foodDetail.energy_100g}} kj</td>
+                </tr>
+                <tr>
+                    <td>Matières grasses / Lipides</td>
+                    <td>{{ foodDetail.fat_100g | toNumber }} g</td>
+                </tr>
+                <tr>
+                    <td>Acides gras saturés</td>
+                    <td>{{ foodDetail['saturated-fat_100g'] | toNumber }} g</td>
+                </tr>
+                <tr>
+                    <td>Glucides</td>
+                    <td>{{ foodDetail.carbohydrates_100g | toNumber }} g</td>
+                </tr>
+                <tr>
+                    <td>Sucres</td>
+                    <td>{{ foodDetail.sugars_100g | toNumber }} g</td>
+                </tr>
+                <tr>
+                    <td>Protéines</td>
+                    <td>{{ foodDetail.proteins_100g | toNumber }} g</td>
+                </tr>
+                <tr>
+                    <td>Sel</td>
+                    <td>{{ foodDetail.salt_100g | toNumber }} g</td>
+                </tr>
+                <tr>
+                    <td>Sodium</td>
+                    <td>{{ foodDetail.sodium_100g | toNumber }} g</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
-<h2>Allergènes</h2>
+<br />
+
+
 <div class="col mb-4">
-    <h1 class="align-self-center">{{recipeName}}</h1>
-    <hr>
-    <h2>Composition</h2>
-    <p class="ml-4" *ngFor="let element of composants">{{element}}</p>
-    <hr>
-    <h2>Allergènes</h2>
-    <p class="ml-4" *ngFor="let element of allergenes">{{element}}</p>
-    <hr>
-    <h2>Valeurs nutritionnelles</h2>
-    <app-tableauNutrition class="fullWidth"></app-tableauNutrition>
-    <hr>
     <div class="row justify-content-between">
         <div class="col-4">
             <h2>Infos pratiques</h2>
