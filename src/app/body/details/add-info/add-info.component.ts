@@ -18,7 +18,7 @@ export class AddInfoComponent implements OnInit {
   submitStore(name,prix,address,lat,lng){
     // recuperer les input et les envoyer au server via food service
     console.log("trying to submit a store");
-    if (name && prix && address && lat && lng){
+    if (name && !isNaN(prix) && address && !isNaN(lat) && !isNaN(lng)){
       this.newStore._id = '0000';
       this.newStore.id_store='0000';
       this.newStore.id_product='0000'; // to be catched
