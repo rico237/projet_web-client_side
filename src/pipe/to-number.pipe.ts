@@ -9,7 +9,7 @@ export class ToNumberPipe implements PipeTransform {
                 finalValue = Math.round(finalValue * 100) / 100;
 
                 return finalValue.toFixed(2);
-            } catch (exception: any) {
+            } catch (exception) {
                 return value;
             }
         } else {
