@@ -1,2 +1,20 @@
-<app-recette-detail></app-recette-detail>
-<app-recette-comments></app-recette-comments>
+<div class="container">
+  <h1>Liste des recettes</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Body</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let recette of recettes">
+        
+        <td>{{ recette.title }}</td>
+        <td>{{ recette.body }}</td>
+        <td><button class="btn btn-primary btn-lg" (click)="routeDetailProduct('recettes/', recette._id)" >Voir la recette</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

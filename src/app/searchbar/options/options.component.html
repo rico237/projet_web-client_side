@@ -2,7 +2,7 @@
     <div class="card-header">
         Filtrer
     </div>
-    <div class="card-body" style="height: 300px; overflow: auto; text-align: center;">
+    <div class="card-body">
             <button *ngFor="let option of searchOptions" type="button" class="btn mx-1 my-1" (click)="updateOption(option)"
                     [ngClass]="
             {

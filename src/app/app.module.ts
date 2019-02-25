@@ -70,6 +70,9 @@ import { MapsComponent } from "./body/details/maps/maps.component";
 import { AgmCoreModule } from "@agm/core";
 import { PrixComponent } from "./body/details/prix/prix.component";
 import { AddInfoComponent } from "./body/details/add-info/add-info.component";
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 import { SpaceAfterCommaPipe } from "../pipe/space-after-comma.pipe";
 import { DeletePrefixPipe } from "../pipe/delete-prefix.pipe";
 import { BoldPipe } from "../pipe/bold.pipe";
@@ -77,6 +80,7 @@ import { UniqPipe } from "../pipe/uniq.pipe";
 import { ToNumberPipe } from "../pipe/to-number.pipe";
 import { AddRecipeComponent } from "./add-recipe/add-recipe.component";
 import { RecipeService } from "../services/recipe.service";
+
 
 @NgModule({
     declarations: [
@@ -94,6 +98,9 @@ import { RecipeService } from "../services/recipe.service";
         MapsComponent,
         PrixComponent,
         AddInfoComponent,
+        HomeComponent,
+        LoginComponent,
+        SignupComponent,
 
         // Pipes
         SpaceAfterCommaPipe,

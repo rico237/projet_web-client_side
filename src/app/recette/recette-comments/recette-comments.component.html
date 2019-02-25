@@ -5,53 +5,35 @@
 				
 				<div class="row">
 					<div class="col-6 title-comment">
-						<h3>Comments</h3>
+						<h3>Commentaires</h3>
 					</div>
 					<div class="col-6 number-comment">
-						<h4>2 comments</h4>
+						<h4>{{comments.length}} commentaires</h4>
 					</div>
 				</div>
 				
 			</div>
 			<div class="list-comment">
-				<div class="media">
+				<div *ngFor="let comment of comments" class="media">
 					<svg class="bd-placeholder-img mr-3" width="64" height="64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64">
-						<title>Anonymous image</title>
+						<title>Image anonyme</title>
 						<rect fill="#868e96" width="100%" height="100%"></rect>
 						<text fill="#dee2e6" dy=".3em" x="40%" y="50%">A</text>
 					</svg>
 					<div class="media-body">
 						<div class="media-heading">
-							<h5 class="mt-0">Media heading</h5>
-
+							<h5 class="mt-0">Utilisateur anonyme</h5>
 						</div>
-
-						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-					</div>
-
-				</div>
-				<div class="media">
-					<svg class="bd-placeholder-img mr-3" width="64" height="64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64">
-						<title>Anonymous image</title>
-						<rect fill="#868e96" width="100%" height="100%"></rect>
-						<text fill="#dee2e6" dy=".3em" x="40%" y="50%">A</text>
-					</svg>
-					<div class="media-body">
-						<div class="media-heading">
-							<h5 class="mt-0">Media heading</h5>
-
-						</div>
-
-						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+						{{comment.content}}
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-12">
 			<div class="input-group mb-3">
-				<input type="text" class="form-control" placeholder="Commenter" aria-label="Commenter" aria-describedby="button-addon2">
+				<input type="text" class="form-control" placeholder="Commenter" aria-label="Commenter" aria-describedby="button-addon2" [(ngModel)]="commentInput">
 				<div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="button" id="button-addon2">Commenter</button>
+					<button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="createComment()" >Commenter</button>
 				</div>
 			</div>
 		</div>
