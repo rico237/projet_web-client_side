@@ -10,9 +10,9 @@ import { RecipeService } from '../../../services/recipe.service';
 	styleUrls: ['./recette-comments.component.css']
 })
 export class RecetteCommentsComponent implements OnInit {
-	private comments : any;
-    private productId: string;
-    private commentInput: string;
+	comments : any;
+    productId: string;
+    commentInput: string;
 
     constructor(
         private activatedRoute: ActivatedRoute,
