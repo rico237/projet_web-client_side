@@ -1,6 +1,21 @@
 .list-group{
-    max-height: 400px;
-    margin-bottom: 10px;
-    overflow:auto;
-    -webkit-overflow-scrolling: touch;
+	max-height: 400px;
+	margin-bottom: 10px;
+	overflow:auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.prix-label{
+	font-size: 1.75rem;
+	font-weight: bolder;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	div.prix-label{
+		font-size: 1rem;
+	}
 }

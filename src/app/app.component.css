@@ -2,6 +2,11 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.container-fluid{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .example-container {
     position: absolute;
     top: 0;
