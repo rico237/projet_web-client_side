@@ -8,8 +8,6 @@
 
         <input id="typeahead-basic" type="text" class="form-control mx-2"
                [(ngModel)]="typo" name="typo" placeholder="Rechercher un ingrédient ou une recette" [ngbTypeahead]="search"/>
-
-        <button type="submit" class="btn btn-primary" (click)="submit();">Submit</button>
     </div>
 
     <app-searchbar-options *ngIf="isOpenedMenu" [searchOptions]="searchOptions" (optionsEvent)="retrieveOptions($event)"></app-searchbar-options>

@@ -50,31 +50,29 @@ export class FoodService {
             }));
     }
 
-    public searchFoodWithFilters(term: string, filters: string[]) {
-        // return this.http.post();
-    }
+    public searchFoodWithFilters(term: string, filters: string[]) {/* return this.http.post();*/ }
 
     public retrieveNutriScore(score) {
         const nutriScores = [
             {
                 score: "a",
-                img: "../assets/img/nutri-scores/nutriscore-a.png"
+                img: "assets/img/nutri-scores/nutriscore-a.png"
             },
             {
                 score: "b",
-                img: "../assets/img/nutri-scores/nutriscore-b.png"
+                img: "assets/img/nutri-scores/nutriscore-b.png"
             },
             {
                 score: "c",
-                img: "../assets/img/nutri-scores/nutriscore-c.png"
+                img: "assets/img/nutri-scores/nutriscore-c.png"
             },
             {
                 score: "d",
-                img: "../assets/img/nutri-scores/nutriscore-d.png"
+                img: "assets/img/nutri-scores/nutriscore-d.png"
             },
             {
                 score: "e",
-                img: "../assets/img/nutri-scores/nutriscore-e.png"
+                img: "assets/img/nutri-scores/nutriscore-e.png"
             },
         ];
 

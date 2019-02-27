@@ -96,9 +96,6 @@ export class SearchbarComponent implements OnInit {
         this.searchOptions = event;
     }
 
-    public submit(): void {
-    }
-
     private retrieveComputedOptions(): string[] {
         let options: string[] = [];
         this.searchOptions.forEach((option: SearchOptions) => {

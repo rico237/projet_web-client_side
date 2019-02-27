@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="col-4" *ngFor="let res of searchResult">
+    <div class="col-12 col-md-4 col-sm-6 single-item-card" *ngFor="let res of searchResult">
         <div class="card text-center h-100 " >
             <div class="card-img-top" [ngStyle]="{'background-image': 'url(' + res.image_url + ')'}"></div>
             
             <h4 class="card-title align-middle"></h4>
             <div class="card-body">
-                <h3>{{res.product_name}} </h3>
+                <h3>{{res.product_name}}</h3>
             </div>
             <div class="card-footer nopadding">
                 <button class='btn btn-block myButt over mb-0' (click)="routeDetailProduct('detail/', res)">
