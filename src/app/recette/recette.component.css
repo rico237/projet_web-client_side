@@ -12,9 +12,11 @@ body {
     margin-bottom: 20Px;
 }
 
-.lib-panel .col-md-3{
+.lib-panel .col-md-3, .lib-panel .col-12{
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 300px;
+    background-position: center;
 }
 
 .lib-panel img {

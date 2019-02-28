@@ -18,9 +18,13 @@ export class AppComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-    	if (window.screen.width === 360 || window.screen.width === 768) { 
+    	if (window.screen.width === 360) { 
     		// 768px portrait
     		this.mobile = true;
     	}
+    }
+
+    public isMobile(): boolean{
+        return this.mobile;
     }
 }

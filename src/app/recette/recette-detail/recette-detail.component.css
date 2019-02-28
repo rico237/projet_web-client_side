@@ -9,6 +9,10 @@
 	top: 20px;
 }
 
+.nogutt {
+	overflow: hidden;
+}
+
 .badge {
 	margin-right: 5px;
 }
