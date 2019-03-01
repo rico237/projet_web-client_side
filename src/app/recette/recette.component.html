@@ -1,32 +1,25 @@
 <div class="container">
-  <h1 class="mb-3">Liste des recettes</h1>
+	<h1 class="mb-3">Liste des recettes</h1>
 
-  <div *ngFor="let recette of recettes">
-    <div class="col-12 lib-item" data-category="ui">
-      <div class="lib-panel">
-        <div class="row box-shadow">
-          <div class="col-md-3 col-12" [ngStyle]="{'background-image': 'url(' + recette.image_url + ')'}">
-
-          </div>
-          <div class="col-md-9">
-            <div class="lib-row lib-header">
-              {{ recette.title }}
-              <div class="lib-header-seperator"></div>
-            </div>
-            <div class="lib-row lib-desc">
-              {{(recette.body.length > 400)? (recette.body | slice:0:400)+'...':(str)}}
-              <br>
-              <button class="btn btn-primary btn-lg my-2 bouton-lien"
-              (click)="routeDetailProduct('recettes/', recette._id)">Voir la recette
-            </button>
-            <div class="clear"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-</div>
-
+	<div *ngFor="let recette of recettes">
+		<div class="col-12 lib-item" data-category="ui">
+			<div class="lib-panel">
+				<div class="row box-shadow">
+					<div class="col-md-3 col-12" [ngStyle]="{'background-image': 'url(' + recette.image_url + ')'}"></div>
+					<div class="col-md-9">
+						<div class="lib-row lib-header">
+							{{ recette.title }}
+							<div class="lib-header-seperator"></div>
+						</div>
+						<div class="lib-row lib-desc" >
+							{{(recette.body.length > 400)? (recette.body | slice:0:400)+'...':(str)}}
+							<br>
+							<button class="btn btn-primary btn-lg my-2 bouton-lien" (click)="routeDetailProduct('recettes/', recette._id)">Voir la recette</button>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
